@@ -19,36 +19,37 @@
                </div>
           </div>
           <div class="form-group">
-               <label class="control-label col-sm-3">Tên Đăng Nhập</label>
+               <label class="control-label col-sm-3">Tên Đăng Nhập<span class="req">*</span></label>
                <div class="col-sm-5">
-                    <input type="text" class="form-control" id="username" name="username" required onblur="kiem_tra_user()" value="<?php echo set_value('username')?>"/>
-
+                    <input type="text" class="form-control" id="username" name="username" required onblur="kiem_tra_user(this.value)" value="<?php echo set_value('username')?>"/>
+                    <div id="ketqua"></div>
                </div>
                <div class="col-sm-4"id="ketqua"></div>
           </div>
           <div class="form-group">
-               <label class="control-label col-sm-3">Mật khẩu:</label>
+               <label class="control-label col-sm-3">Mật khẩu:<span class="req">*</span></label>
                <div  class="col-sm-5">
-                    <input type="password" class="form-control" id="password" name="password" required>
+                    <input type="password" class="form-control" id="password" name="password"  required>
                </div>
           </div>
           <div class="form-group">
-               <label for="param_re_password" class="control-label col-sm-3">Nhập lại mật khẩu:</label>
+               <label for="param_re_password" class="control-label col-sm-3">Nhập lại mật khẩu:<span class="req">*</span></label>
                <div  class="col-sm-5">
-                    <input type="password" class="form-control" id="re_password" name="re_password" required="TRUE" onblur="load()">
+                    <input type="password" class="form-control" id="re_password" name="re_password" required="TRUE" onblur="kiemtrapass()">
                     <span id="correct"></span>
                </div>
           </div>
           <div class="form-group">
                <label for="param_email" class="control-label col-sm-3">Email:<span class="req">*</span></label>
                <div  class="col-sm-5">
-                    <input type="email" class="form-control" id="email" name="email" required="TRUE" value="<?php echo set_value('email')?>">
+                    <input type="email" class="form-control" id="email" name="email" required="TRUE" onblur="kiem_tra_email(this.value)" value="<?php echo set_value('email')?>">
+                    <div id="idemail"></div>
                </div>
           </div>
           <div class="form-group">
                <label for="param_name" class="control-label col-sm-3">Họ và tên:</label>
                <div  class="col-sm-5">
-                    <input type="text" class="form-control" id="name" name="name" required="TRUE" value="<?php echo set_value('name')?>">
+                    <input type="text" class="form-control" id="name" name="name" value="<?php echo set_value('name')?>">
                </div>
           </div>
           <div class="form-group">
@@ -64,7 +65,7 @@
           </div>
      </div>
      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <input style="float: right;" type="submit" class="btn btn-inverse" name="register" value="Đăng Ký Thông Tin">
+          <input style="float: right;" type="submit" class="btn btn-inverse" name="register" value="Đăng Ký">
      </div>
 </form>
 </div>
