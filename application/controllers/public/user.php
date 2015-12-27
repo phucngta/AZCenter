@@ -50,11 +50,21 @@ class user extends Public_Controller
 			$password = $this->input->post('password');
 			$group_id = array('2');
 
+			//Kiem tra thong tin
+			if (!$this->kiem_tra_user($username) || !$this->kiem_tra_email($email))
+			{
+				ob_end_clean();
+				$this->session->set_flashdata('message',"Thông tin không hợp lệ");
+				$this->render("public/register_login_view");
+				return false;
+			}
+
 			$this->additional_data = array(
 				'name' => $this->input->post('name'),
 				'phone' => $this->input->post('phone'),
 				'age' => $this->input->post('age')
 				);
+
 
 			//Upload Image
 			$this->upload($this->upload_folder,$username);
@@ -67,5 +77,48 @@ class user extends Public_Controller
 		{
 			$this->render("public/register_login_view");
 		}
+	}
+
+	public function kiem_tra_user($name = NULL)
+	{
+		if($name != NULL)
+		{
+			$str = 'SELECT * FROM users Where username ='.$this->db->escape($name);
+			$query = $this->db->query($str);
+			$count = $query->num_rows(); 
+			ob_start();
+			if ($count === 0)
+			{
+				echo "Tên hợp lệ";
+				return true;
+			}
+			else{
+				echo "Tên này đã tồn tại";
+				// return false;
+			}
+		}
+		else echo "Chưa nhập tên";
+		return false;
+	}
+
+	public function kiem_tra_email($email = NULL)
+	{
+		if($email != NULL)
+		{
+			$str = 'SELECT * FROM users Where email ='.$this->db->escape($email);
+			$query = $this->db->query($str);
+			$count = $query->num_rows(); 
+			if ($count === 0)
+			{
+				echo "Có thể sử dụng";
+				return true;
+			}
+			else{
+				echo "Email này đã tồn tại";
+				// return false;
+			}
+		}
+		else echo "Chưa nhập email";
+		return false;
 	}
 }

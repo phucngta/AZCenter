@@ -61,23 +61,27 @@ function previewImage(input)
 	}
 }
 
-// function upload()
-// {
-// 	xmlHttp = new createXmlHttp();
-// 	test ='test'
-// 	url = '../../upload/index/uploads/test';
-// 	// alert(url);
+function kiem_tra_user(str) {
+	
+	var xmlhttp = new createXmlHttp();
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("ketqua").innerHTML = xmlhttp.responseText;
+        }
+    };
+    xmlhttp.open("POST",'kiem_tra_user/'+str, true);
+    xmlhttp.send();
 
-// 	xmlHttp.open("GET", url,true)
-// 	xmlHttp.send(null);
+    }
 
-// 	xmlHttp.onreadystatechange=function()
-// 	{
-// 		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
-// 		{
-// 			// alert(xmlHttp.responseText); 
-// 			document.getElementById('avatar').innerHTML = xmlHttp.responseText;
-// 		}
-// 	} 
-// }
+function kiem_tra_email(str) {
 
+    var xmlhttp = new createXmlHttp();
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("idemail").innerHTML = xmlhttp.responseText;
+        }
+    };
+    xmlhttp.open("POST",'kiem_tra_email/'+str, true);
+    xmlhttp.send();
+    } 
