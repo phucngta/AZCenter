@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <?php
-foreach($ctkhoc as $ct)
+foreach($ctkhoahoc as $ct)
 {
   $id= $this->uri->segment(4);
   if($id== $ct->id)
@@ -16,10 +16,6 @@ foreach($ctkhoc as $ct)
     <div class="col-lg-4 col-lg-offset-4">
       <h1>Sửa Chi Tiết Khóa Học</h1>
       <form enctype="multipart/form-data" method="post" name="suactkhoahoc">
-        <div class="form-group">
-          <label >Mã Chi Tiết Khóa Học</label>
-          <input type="text" value="<?php echo "$id"  ?>"  class="form-control" name="id" placeholder="" required>
-        </div>
         <div class="form-group">
           <label >Tên Học Viên</label>
           <?php

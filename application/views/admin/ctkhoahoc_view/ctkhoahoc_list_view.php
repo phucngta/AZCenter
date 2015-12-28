@@ -15,9 +15,9 @@
   <div class="row">
     <div class="col-lg-12" style="margin-top: 10px;">
       <table class="table table-hover table-bordered table-condensed">
-      <tr><td></td><td>Mã Chi Tiết Khóa Học</td><td>Khóa Học</td><td>Học Viên</td>
+      <tr><td></td><td>Mã Chi Tiết Khóa Học</td><td>Học Viên</td><td>Khóa Học</td>
       </tr>
-      <?php foreach ($ctkhoc as $ct) {?>
+      <?php foreach ($ctkhoahoc as $ct) {?>
         <tr>
           <?php if($this->ion_auth->in_group('admin'))
           { ?>

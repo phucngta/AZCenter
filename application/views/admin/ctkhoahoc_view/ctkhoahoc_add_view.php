@@ -4,10 +4,6 @@
     <div class="col-lg-4 col-lg-offset-4">
       <h1>Thêm Chi Tiết Khóa Học</h1>
       <form enctype="multipart/form-data" method="post" name="themctkhoahoc">        
-        <div class="form-group">
-          <label  >Tên Khóa Học</label>
-          <input type="text" class="form-control" name="TENKH" placeholder="" required>
-        </div>
                         <div class="form-group">
           <label >Tên Khóa Học</label>
           <?php
