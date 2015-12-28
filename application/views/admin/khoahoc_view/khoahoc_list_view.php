@@ -24,18 +24,18 @@
         <tr>
           <?php if($this->ion_auth->in_group('admin'))
           { ?>
-          <td><a href="<?php echo base_url('admin/khoahoc/update/'.$kh->MAKH);?>"><span class="glyphicon glyphicon-pencil"></span></a>
-              <a href="<?php echo base_url('admin/khoahoc/delete/'.$kh->MAKH); ?>"><span class="glyphicon glyphicon-remove"></span></a>
+          <td><a href="<?php echo base_url('admin/khoahoc/update/'.$kh->makh);?>"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a href="<?php echo base_url('admin/khoahoc/delete/'.$kh->makh); ?>"><span class="glyphicon glyphicon-remove"></span></a>
           </td>
           <?php } else echo '<td></td>'?>
-          <td><?php echo $kh->MAKH ?></td>
-          <td><?php echo $kh->TENKH ?></td>
-          <td><?php echo $kh->TGBD ?></td>
-          <td><?php echo $kh->TGKT ?></td>
-          <td><?php echo $kh->HOCPHI ?></td>
+          <td><?php echo $kh->makh ?></td>
+          <td><?php echo $kh->tenkh ?></td>
+          <td><?php echo $kh->tgbd ?></td>
+          <td><?php echo $kh->tgkt ?></td>
+          <td><?php echo $kh->hocphi ?></td>
           <td><?php foreach ($sts as $ts) {if($ts->id==$kh->teacher_id){ echo $ts->name; break;}}?></td>
-          <td><?php foreach ($cthoc as $t) {if($t->MACTH==$kh->MACTH){ echo $t->TENCTH; break;}}?></td>
-          <td><?php foreach ($dmc as $tr) {if($tr->MADM==$kh->MADM){ echo $tr->TENDM; break;}}?></td>
+          <td><?php foreach ($cthoc as $t) {if($t->macth==$kh->macth){ echo $t->tencth; break;}}?></td>
+          <td><?php foreach ($dmc as $tr) {if($tr->madm==$kh->madm){ echo $tr->tendm; break;}}?></td>
           
         </tr>
       <?php } ?>

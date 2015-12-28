@@ -14,11 +14,11 @@
         <tr>
           <?php if($this->ion_auth->in_group('teacher'))
           { ?>
-          <td><a href="<?php echo base_url('admin/cthoc/update/'.$cth->MACTH); ?>"><span class="glyphicon glyphicon-pencil"></span></a>
-          <a href="<?php echo base_url('admin/cthoc/delete/'.$cth->MACTH); ?>"><span class="glyphicon glyphicon-remove"></span></a></td>
+          <td><a href="<?php echo base_url('admin/cthoc/update/'.$cth->macth); ?>"><span class="glyphicon glyphicon-pencil"></span></a>
+          <a href="<?php echo base_url('admin/cthoc/delete/'.$cth->macth); ?>"><span class="glyphicon glyphicon-remove"></span></a></td>
           <?php } else echo '<td></td>'?>
-          <td><?php echo $cth->MACTH ?></td>
-          <td><?php echo $cth->TENCTH ?></td>
+          <td><?php echo $cth->macth ?></td>
+          <td><?php echo $cth->tencth ?></td>
           <!-- <td><?php echo $cth->MOTA ?></td> -->
         </tr>
       <?php } ?>

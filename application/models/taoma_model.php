@@ -2,14 +2,14 @@
 	/**
 	* 
 	*/
-	class taoma_model extends CI_Model
+	class Taoma_model extends CI_Model
 	{
 		
 		public function Timmacuoi($tenid,$tenbang,$chuoi,$limit)
 		{
 			$ketqua="";
 			$khong="0";
-			if($tenid!="MAKH"||$tenid!="id"||$tenid!="MADM"||$tenid!="MACTH")
+			if($tenid!="makh"||$tenid!="id"||$tenid!="madm"||$tenid!="macth")
 			{
 				$max=$limit-2;
 			}
