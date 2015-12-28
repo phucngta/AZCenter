@@ -23,8 +23,8 @@
           </td>
           <?php } else echo '<td></td>'?>
           <td><?php echo $bh->id ?></td>
-          <td><?php echo $bh->TENBH ?></td>
-          <td><?php foreach ($cthoc as $t) {if($t->MACTH==$bh->MACTH){ echo $t->TENCTH; break;}}?></td>
+          <td><?php echo $bh->tenbh ?></td>
+          <td><?php foreach ($cthoc as $t) {if($t->macth==$bh->macth){ echo $t->tencth; break;}}?></td>
         </tr>
       <?php } ?>
       </table>

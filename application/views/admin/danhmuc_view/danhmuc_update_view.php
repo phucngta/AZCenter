@@ -2,11 +2,11 @@
 <?php
 foreach($danhmuc as $dmc)
 {
-  $MADM= $this->uri->segment(4);
-  if($MADM== $dmc->MADM)
+  $madm= $this->uri->segment(4);
+  if($madm== $dmc->madm)
   {
-  $MADM= $dmc->MADM;
-  $TENDM= $dmc->TENDM;
+  $madm= $dmc->madm;
+  $tendm= $dmc->tendm;
   }
 }
  ?>
@@ -18,10 +18,10 @@ foreach($danhmuc as $dmc)
         <div class="form-group">
             <div class="form-group">
           <label >Mã Danh Mục</label>
-          <input type="text" value="<?php echo "$MADM"  ?>" class="form-control" name="MADM" placeholder="1111" readonly>
+          <input type="text" value="<?php echo "$madm"  ?>" class="form-control" name="madm" placeholder="1111" readonly>
         </div>
           <label >Tên Danh Mục</label>
-          <input type="text" value="<?php echo "$TENDM"  ?>"  class="form-control" name="TENDM" placeholder="2222" required>
+          <input type="text" value="<?php echo "$tendm"  ?>"  class="form-control" name="tendm" placeholder="2222" required>
         </div>
         <button type="submit" name="suadanhmuc" class="btn btn-primary btn-lg btn-block">Sửa danh mục </button>
     </form>

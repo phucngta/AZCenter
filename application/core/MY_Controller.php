@@ -55,7 +55,7 @@ class MY_Controller extends CI_Controller
         $file_name = $finfo['file_name'];
       }
       //Resize 1
-      $image = './uploads/'.$upload_folder. "/".$file_name.'.jpg';
+      $avatar = './uploads/'.$upload_folder. "/".$file_name.'.jpg';
       $configure['image_library'] = "gd2";
       $configure['source_image'] = './uploads/'.$finfo['file_name'];
       $configure['maintain_ratio'] = TRUE;
@@ -63,7 +63,7 @@ class MY_Controller extends CI_Controller
       $configure['file_ext'] = '.jpg';
       $configure['width'] = "200";
       $configure['height'] = "200";
-      $configure['new_image'] = $image;
+      $configure['new_image'] = $avatar;
       $this->load->library('image_lib',$configure);
       $this->image_lib->resize();
       $this->image_lib->clear();
@@ -77,9 +77,9 @@ class MY_Controller extends CI_Controller
       $this->image_lib->resize();
       $this->image_lib->clear();
 
-      $this->additional_data['image'] = $image;
+      $this->additional_data['avatar'] = $avatar;
       $this->additional_data['thumbnail'] = $thumb;
-      $this->new_data['image'] = $image;
+      $this->new_data['avatar'] = $avatar;
       $this->new_data['thumbnail'] = $thumb;
     }
     
