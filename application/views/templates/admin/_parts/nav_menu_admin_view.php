@@ -5,3 +5,4 @@
 <li><a href="<?php echo site_url('admin/cthoc');?>">Chương trình học</a></li>
 <li><a href="<?php echo site_url('admin/baihoc');?>">Bài Học</a></li>
 <li><a href="<?php echo site_url('admin/danhmuc');?>">Danh Mục </a></li>
+<li><a href="<?php echo site_url('admin/ctkhoahoc');?>">Chi Tiết Khóa Học </a></li>

@@ -14,11 +14,11 @@
         <tr>
           <?php if($this->ion_auth->in_group('admin'))
           { ?>
-          <td><a href="<?php echo base_url('admin/danhmuc/update/'.$dmc->MADM); ?>"><span class="glyphicon glyphicon-pencil"></span></a>
-          <a href="<?php echo base_url('admin/danhmuc/delete/'.$dmc->MADM); ?>"><span class="glyphicon glyphicon-remove"></span></a></td>
+          <td><a href="<?php echo base_url('admin/danhmuc/update/'.$dmc->madm); ?>"><span class="glyphicon glyphicon-pencil"></span></a>
+          <a href="<?php echo base_url('admin/danhmuc/delete/'.$dmc->madm); ?>"><span class="glyphicon glyphicon-remove"></span></a></td>
           <?php } else echo '<td></td>'?>
-          <td><?php echo $dmc->MADM ?></td>
-          <td><?php echo $dmc->TENDM ?></td>
+          <td><?php echo $dmc->madm ?></td>
+          <td><?php echo $dmc->tendm ?></td>
         </tr>
       <?php } ?>
       </table>

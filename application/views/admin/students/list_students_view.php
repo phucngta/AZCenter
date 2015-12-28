@@ -22,12 +22,13 @@
         }
         echo '</td>';
         
-        if ($std->thumbnail != NULL) {
-          echo '<td><img alt="Avatar" class="img-responsive" src="'.base_url($std->thumbnail).'"></td>';
-        }
-        else echo '<td><img alt="Avatar" class="img-responsive" src="'.base_url('uploads/avatar/no-user-image-icon.gif').'"></td>';
+         if ($std->thumbnail!= NULL) {
+           echo '<td><img alt="Avatar" class="img-responsive" src="'.base_url($std->thumbnail).'"></td>';
+         }
+         else echo '<td><img alt="Avatar" class="img-responsive" src="'.base_url('uploads/avatar/no-user-image-icon.gif').'"></td>';
 
-        echo '<td>'.$std->name.'</td>
+
+        echo '<td><a href ="#" onclick="getUsers ('.$group->id.')" >'.$std->name.'</a></td>
         <td>'.$std->age.'</td>
         <td>'.$std->email.'</td>
         <td>'.$std->phone.'</td>';

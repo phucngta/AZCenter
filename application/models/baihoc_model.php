@@ -23,8 +23,8 @@ class baihoc_model extends CI_model
     $id=$this->taoma();
     $data=array(
       'id'=>$id,
-      'MACTH'=> $this->input->post('MACTH'),
-      'TENBH'=> $this->input->post('TENBH'),
+      'macth'=> $this->input->post('macth'),
+      'tenbh'=> $this->input->post('tenbh'),
       );
     $thembaihoc= $this->input->post('thembaihoc');
     if(isset($thembaihoc))
@@ -36,8 +36,8 @@ class baihoc_model extends CI_model
     public function update($id)
     {
       $this->id=$id;
-     $this->MACTH= $this->input->post('MACTH');
-     $this->TENBH= $this->input->post('TENBH');
+     $this->MACTH= $this->input->post('macth');
+     $this->TENBH= $this->input->post('tenbh');
       $suabaihoc= $this->input->post('suabaihoc');
       if(isset($suabaihoc))
       $this->db->where('id',$id);

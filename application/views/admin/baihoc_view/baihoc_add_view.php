@@ -6,16 +6,16 @@
       <form method="post" name="thembaihoc">
         <div class="form-group">
           <label >Tên Bài Học</label>
-          <input type="text" class="form-control" name="TENBH" placeholder="" required>
+          <input type="text" class="form-control" name="tenbh" placeholder="" required>
         </div> 
         <div class="form-group">
           <label >Tên Chương Trình Học</label>
           <?php
             $str=$this->db->get('chuongtrinhhoc');
             $object=$str->result_object();
-            echo "<select name='MACTH' class='form-control'>";
+            echo "<select name='macth' class='form-control'>";
             foreach ($object as $value) {
-              echo "<option value='$value->MACTH'>$value->TENCTH</option>";
+              echo "<option value='$value->macth'>$value->tencth</option>";
             }
             echo "</select>";
           ?>

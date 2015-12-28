@@ -3,17 +3,17 @@
 foreach($khoahoc as $kh)
 {
   $id= $this->uri->segment(4);
-  if($id== $kh->MAKH)
+  if($id== $kh->makh)
   {
-  $MAKH= $kh->MAKH;
-  $TENKH= $kh->TENKH;
-  $TGKT= $kh->TGKT;
-  $TGBD= $kh->TGBD;
-  $HOCPHI= $kh->HOCPHI;
+  $makh= $kh->makh;
+  $tenkh= $kh->tenkh;
+  $tgkt= $kh->tgkt;
+  $tgbd= $kh->tgbd;
+  $hocphi= $kh->hocphi;
   $teacher_id= $kh->teacher_id;
-  $picture= $kh->PICTURE;
-  $MADM= $kh->MADM;
-  $MACTH= $kh->MACTH;
+  $picture= $kh->picture;
+  $madm= $kh->madm;
+  $macth= $kh->macth;
   }
 }
  ?>
@@ -36,23 +36,23 @@ foreach($khoahoc as $kh)
         </div>  
         <div class="form-group">
           <label >Mã Khóa Học</label>
-          <input type="text" value="<?php echo "$MAKH"  ?>"  class="form-control" name="MAKH" placeholder="" required>
+          <input type="text" value="<?php echo "$makh"  ?>"  class="form-control" name="makh" placeholder="" required>
         </div>
         <div class="form-group">
           <label  >Tên Khóa Học</label>
-          <input type="text" value="<?php echo "$TENKH"  ?>"  class="form-control" name="TENKH" placeholder="" required>
+          <input type="text" value="<?php echo "$tenkh"  ?>"  class="form-control" name="tenkh" placeholder="" required>
         </div>
         <div class="form-group">
           <label  >Thời Gian Bắt Đầu</label>
-          <input type="date" value="<?php echo "$TGBD"  ?>"  class="form-control" name="THBD" placeholder="" required>
+          <input type="date" value="<?php echo "$tgbd"  ?>"  class="form-control" name="tgbd" placeholder="" required>
         </div>
         <div class="form-group">
           <label  >Thời Gian Kết Thúc</label>
-          <input type="date" value="<?php echo "$TGKT"  ?>"  class="form-control" name="TGKT" placeholder="" required>
+          <input type="date" value="<?php echo "$tgkt"  ?>"  class="form-control" name="tgkt" placeholder="" required>
         </div>
         <div class="form-group">
           <label  >Học Phí</label>
-          <input type="number" value="<?php echo "$HOCPHI"  ?>"  class="form-control" name="HOCPHI" placeholder="" min="10000" max="10000000" step="100000" value="10000" required>
+          <input type="number" value="<?php echo "$hocphi"  ?>"  class="form-control" name="hocphi" placeholder="" min="10000" max="10000000" step="100000" value="10000" required>
         </div>
         <div class="form-group">
           <label >Tên Giảng Viên</label>
@@ -71,9 +71,9 @@ foreach($khoahoc as $kh)
           <?php
             $str=$this->db->get('chuongtrinhhoc');
             $object=$str->result_object();
-            echo "<select name='MACTH' class='form-control'>";
+            echo "<select name='macth' class='form-control'>";
             foreach ($object as $value) {
-              echo "<option value='$value->MACTH'>$value->TENCTH</option>";
+              echo "<option value='$value->macth'>$value->tencth</option>";
             }
             echo "</select>";
           ?>
@@ -85,7 +85,7 @@ foreach($khoahoc as $kh)
             $object=$str->result_object();
             echo "<select name='MADM' class='form-control'>";
             foreach ($object as $value) {
-              echo "<option value='$value->MADM'>$value->TENDM</option>";
+              echo "<option value='$value->madm'>$value->tendm</option>";
             }
             echo "</select>";
           ?>
