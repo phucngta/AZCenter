@@ -14,19 +14,19 @@
         
         <div class="form-group">
           <label  >Tên Khóa Học</label>
-          <input type="text" class="form-control" name="TENKH" placeholder="" required>
+          <input type="text" class="form-control" name="tenkh" placeholder="" required>
         </div>
          <div class="form-group">
           <label >Học Phí</label>
-          <input type="number" class="form-control" name="HOCPHI" placeholder="" min="10000" max="10000000" step="100000" value="10000" required>
+          <input type="number" class="form-control" name="hocphi" placeholder="" min="10000" max="10000000" step="100000" value="10000" required>
         </div> 
         <div class="form-group">
           <label >Thời Gian Bắt Đầu</label>
-          <input type="date" class="form-control" name="TGBD" placeholder="" required>
+          <input type="date" class="form-control" name="tgbd" placeholder="" required>
         </div> 
          <div class="form-group">
           <label >Thời Gian Kết Thúc</label>
-          <input type="date" class="form-control" name="TGKT" placeholder="" required>
+          <input type="date" class="form-control" name="tgkt" placeholder="" required>
         </div> 
          <div class="form-group">
           <label >Tên Giảng Viên</label>
@@ -46,9 +46,9 @@
           <?php
             $str=$this->db->get('chuongtrinhhoc');
             $object=$str->result_object();
-            echo "<select name='MACTH' class='form-control'>";
+            echo "<select name='macth' class='form-control'>";
             foreach ($object as $value) {
-              echo "<option value='$value->MACTH'>$value->TENCTH</option>";
+              echo "<option value='$value->macth'>$value->tencth</option>";
             }
             echo "</select>";
           ?>
@@ -58,9 +58,9 @@
           <?php
             $str=$this->db->get('danhmuc');
             $object=$str->result_object();
-            echo "<select name='MADM' class='form-control'>";
+            echo "<select name='madm' class='form-control'>";
             foreach ($object as $value) {
-              echo "<option value='$value->MADM'>$value->TENDM</option>";
+              echo "<option value='$value->madm'>$value->tendm</option>";
             }
             echo "</select>";
           ?>

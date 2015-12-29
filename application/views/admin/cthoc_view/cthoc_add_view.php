@@ -6,11 +6,11 @@
       <form method="post" name="themcthoc">
         <div class="form-group">
           <label >Tên Chương Trình Học</label>
-          <input type="text" class="form-control" name="TENCTH" placeholder="" required>
+          <input type="text" class="form-control" name="tencth" placeholder="" required>
         </div>
         <div class="form-group">
           <label >Mô Tả</label>
-          <textarea name="MOTA" class="form-control" cols="40" rows="5" required></textarea>
+          <textarea name="mota" class="form-control" cols="40" rows="5" required></textarea>
         </div>   
         <button type="submit" name="themcthoc" class="btn btn-primary btn-lg btn-block">Thêm chương trình học</button>
     </form>

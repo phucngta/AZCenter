@@ -1,5 +1,5 @@
 <?php
-class khoahoc_model extends CI_model
+class Khoahoc_model extends CI_model
 {
   public function __contruct()
   {
@@ -14,22 +14,22 @@ class khoahoc_model extends CI_model
   public  function taoma($MAKH = NULL)
   {
     $ma=$MAKH;
-    $this->load->model('taoma_model');
-    $ma=$this->taoma_model->Timmacuoi("MAKH","khoahoc",$ma,5);
+    $this->load->model('Taoma_model');
+    $ma=$this->Taoma_model->Timmacuoi("MAKH","khoahoc",$ma,5);
     return $ma;
   }
   public function add($makh, $img)
   {
     // $MAKH=$this->taoma();
     $data=array(
-      'MAKH'=> $makh,
-      'TENKH'=> $this->input->post('TENKH'),
-      'TGBD'=> $this->input->post('TGBD'),
-      'TGKT'=> $this->input->post('TGKT'),
-      'MADM'=> $this->input->post('MADM'),
-      'MACTH'=> $this->input->post('MACTH'),
-      'HOCPHI'=> $this->input->post('HOCPHI'),
-      'PICTURE'=>$img,
+      'makh'=> $makh,
+      'tenkh'=> $this->input->post('tenkh'),
+      'tgbd'=> $this->input->post('tgbd'),
+      'tgkt'=> $this->input->post('tgkt'),
+      'madm'=> $this->input->post('madm'),
+      'macth'=> $this->input->post('macth'),
+      'hocphi'=> $this->input->post('hocphi'),
+      'picture'=>$img,
       'teacher_id'=> $this->input->post('teacher_id'),
       );
     $themkhoahoc= $this->input->post('themkhoahoc');
@@ -41,23 +41,23 @@ class khoahoc_model extends CI_model
 
   public function update($id, $img)
   {
-    $this->MAKH=$id;
-    $this->TENKH= $this->input->post('TENCTH');
-    $this->HOCPHI= $this->input->post('HOCPHI');
-    $this->TGBD= $this->input->post('TGBD');
-    $this->TGKT= $this->input->post('TGKT');
-    $this->PICTURE= $img;
+    $this->makh=$id;
+    $this->tenkh= $this->input->post('tenkh');
+    $this->hocphi= $this->input->post('hocphi');
+    $this->tgbd= $this->input->post('tgbd');
+    $this->tgkt= $this->input->post('tgkt');
+    $this->picture= $img;
     $this->teacher_id= $this->input->post('teacher_id');
-    $this->MADM= $this->input->post('MADM');
-    $this->MACTH= $this->input->post('MACTH');
+    $this->madm= $this->input->post('madm');
+    $this->macth= $this->input->post('macth');
     $suakhoahoc= $this->input->post('suakhoahoc');
     if(isset($suakhoahoc))
-      $this->db->where('MAKH',$id);
+      $this->db->where('makh',$id);
     $this->db->update('khoahoc',$this );
   }
   public function delete($id)
   {
-    $this->db->where('MAKH',$id);
+    $this->db->where('makh',$id);
     $this->db->delete('khoahoc');
   }
 

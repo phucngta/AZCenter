@@ -1,5 +1,5 @@
 <?php
-class baihoc_model extends CI_model
+class Baihoc_model extends CI_model
 {
   public function __contruct()
   {
@@ -14,8 +14,8 @@ class baihoc_model extends CI_model
   public  function taoma($id = NULL)
   {
       $ma=$id;
-      $this->load->model('taoma_model');
-      $ma=$this->taoma_model->Timmacuoi("id","baihoc","BH",5);
+      $this->load->model('Taoma_model');
+      $ma=$this->Taoma_model->Timmacuoi("id","baihoc","BH",5);
       return $ma;
   }
   public function add()
@@ -23,8 +23,8 @@ class baihoc_model extends CI_model
     $id=$this->taoma();
     $data=array(
       'id'=>$id,
-      'MACTH'=> $this->input->post('MACTH'),
-      'TENBH'=> $this->input->post('TENBH'),
+      'macth'=> $this->input->post('macth'),
+      'tenbh'=> $this->input->post('tenbh'),
       );
     $thembaihoc= $this->input->post('thembaihoc');
     if(isset($thembaihoc))
@@ -36,8 +36,8 @@ class baihoc_model extends CI_model
     public function update($id)
     {
       $this->id=$id;
-     $this->MACTH= $this->input->post('MACTH');
-     $this->TENBH= $this->input->post('TENBH');
+     $this->macth= $this->input->post('macth');
+     $this->tenbh= $this->input->post('tenbh');
       $suabaihoc= $this->input->post('suabaihoc');
       if(isset($suabaihoc))
       $this->db->where('id',$id);

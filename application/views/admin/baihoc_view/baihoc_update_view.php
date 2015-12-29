@@ -6,8 +6,8 @@ foreach($baihoc as $tr)
   if($id== $tr->id)
   {
   $id= $tr->id;
-  $MACTH= $tr->MACTH;
-  $TENBH= $tr->TENBH;
+  $macth= $tr->macth;
+  $tenbh= $tr->tenbh;
   }
 }
  ?>
@@ -22,16 +22,16 @@ foreach($baihoc as $tr)
         </div>
         <div class="form-group">
           <label  >Tên Bài Học</label>
-          <input type="text" value="<?php echo "$TENBH"  ?>"  class="form-control" name="TENBH" placeholder="3333" required>
+          <input type="text" value="<?php echo "$tenbh"  ?>"  class="form-control" name="tenbh" placeholder="3333" required>
         </div>
         <div class="form-group">
             <label >Tên Chương Trình Học</label>
           <?php
             $str=$this->db->get('chuongtrinhhoc');
             $object=$str->result_object();
-            echo "<select name='MACTH' class='form-control'>";
+            echo "<select name='macth' class='form-control'>";
             foreach ($object as $value) {
-              echo "<option value='$value->MACTH'>$value->TENCTH</option>";
+              echo "<option value='$value->macth'>$value->tencth</option>";
             }
             echo "</select>";
           ?>

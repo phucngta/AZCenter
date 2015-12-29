@@ -1,5 +1,5 @@
 <?php
-class cthoc_model extends CI_model
+class Cthoc_model extends CI_model
 {
   public function __contruct()
   {
@@ -11,20 +11,20 @@ class cthoc_model extends CI_model
     $query_result= $query->result_object();
     return $query_result; 
   }
-   public  function taoma($MACTH = NULL)
+   public  function taoma($macth = NULL)
   {
-      $ma=$MACTH;
-      $this->load->model('taoma_model');
-      $ma=$this->taoma_model->Timmacuoi("MACTH","chuongtrinhhoc",$ma,5);
+      $ma=$macth;
+      $this->load->model('Taoma_model');
+      $ma=$this->Taoma_model->Timmacuoi("macth","chuongtrinhhoc",$ma,5);
       return $ma;
   }
   public function add()
   {
-    $MACTH=$this->taoma();
+    $macth=$this->taoma();
     $data=array(
-      'MACTH'=> $MACTH,
-      'TENCTH'=> $this->input->post('TENCTH'),
-      'MOTA'=> $this->input->post('MOTA'),
+      'macth'=> $macth,
+      'tencth'=> $this->input->post('tencth'),
+      'mota'=> $this->input->post('mota'),
       );
     $themcthoc= $this->input->post('themcthoc');
     if(isset($themcthoc))
@@ -35,17 +35,17 @@ class cthoc_model extends CI_model
 
     public function update($id)
     {
-      $this->MACTH=$id;
-     $this->TENCTH= $this->input->post('TENCTH');
-     $this->MOTA= $this->input->post('MOTA');
+      $this->macth=$id;
+     $this->tencth= $this->input->post('tencth');
+     $this->mota= $this->input->post('mota');
       $suacthoc= $this->input->post('suacthoc');
       if(isset($suacthoc))
-      $this->db->where('MACTH',$id);
+      $this->db->where('macth',$id);
       $this->db->update('chuongtrinhhoc',$this );
     }
     public function delete($id)
     {
-      $this->db->where('MACTH',$id);
+      $this->db->where('macth',$id);
       $this->db->delete('chuongtrinhhoc');
     }
     

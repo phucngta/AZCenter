@@ -11,12 +11,12 @@ class Cthoc extends Admin_Controller
       $this->session->set_flashdata('message','You are not allowed to access this page');
       redirect('admin','refresh');
     }
-    $this->load->model('cthoc_model');
+    $this->load->model('Cthoc_model');
   }
   public function index()
   {
     $this->data['page_title']='Quản Lý Chương Trình Học';
-    $this->data['chuongtrinhhoc']= $this->cthoc_model->show();
+    $this->data['chuongtrinhhoc']= $this->Cthoc_model->show();
     $this->render('admin/cthoc_view/cthoc_list_view');
   }
   public function add()
@@ -26,7 +26,7 @@ class Cthoc extends Admin_Controller
     $themcthoc=$this->input->post('themcthoc');
     if(isset($themcthoc))
     {
-      $this->cthoc_model->add();
+      $this->Cthoc_model->add();
       $this->session->set_flashdata('message','Thêm Thành Công');
       redirect('admin/cthoc/index','refresh');
     }
@@ -35,13 +35,13 @@ class Cthoc extends Admin_Controller
    public function update()
   {
     $this->data['page_title']='Sửa Chương Trình Học';
-    $this->data['chuongtrinhhoc']= $this->cthoc_model->show();
+    $this->data['chuongtrinhhoc']= $this->Cthoc_model->show();
     $this->render('admin/cthoc_view/cthoc_update_view');
     $id= $this->uri->segment(4);
     $suacthoc= $this->input->post('suacthoc');
     if(isset($suacthoc))
     {
-      $this->cthoc_model->update($id);
+      $this->Cthoc_model->update($id);
       $this->session->set_flashdata('message',' Sửa Thành Công');
       redirect('admin/cthoc/index','refresh');
     }
@@ -50,7 +50,7 @@ class Cthoc extends Admin_Controller
     public function delete()
     {
       $id=$this->uri->segment(4);
-      $this->cthoc_model->delete($id);
+      $this->Cthoc_model->delete($id);
       $this->session->set_flashdata('message','Xóa Thành Công');
       redirect('admin/cthoc/index','refresh');
     }

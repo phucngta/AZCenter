@@ -11,13 +11,13 @@ class danhmuc extends Admin_Controller
       $this->session->set_flashdata('message','You are not allowed to access this page');
       redirect('admin','refresh');
     }
-    $this->load->model('danhmuc_model');
+    $this->load->model('Danhmuc_model');
   }
 
   public function index()
   {
     $this->data['page_title']='Quản Lý Danh Mục';
-    $this->data['danhmuc']= $this->danhmuc_model->show();
+    $this->data['danhmuc']= $this->Danhmuc_model->show();
     $this->render('admin/danhmuc_view/danhmuc_list_view');
   }
   
@@ -28,7 +28,7 @@ class danhmuc extends Admin_Controller
     $themdanhmuc=$this->input->post('themdanhmuc');
     if(isset($themdanhmuc))
     {
-      $this->danhmuc_model->add();
+      $this->Danhmuc_model->add();
       $this->session->set_flashdata('message','Thêm Thành Công');
       redirect('admin/danhmuc/index','refresh');
     }
@@ -37,13 +37,13 @@ class danhmuc extends Admin_Controller
    public function update()
   {
     $this->data['page_title']='Sửa Danh Mục';
-    $this->data['danhmuc']= $this->danhmuc_model->show();
+    $this->data['danhmuc']= $this->Danhmuc_model->show();
     $this->render('admin/danhmuc_view/danhmuc_update_view');
     $id= $this->uri->segment(4);
     $suadanhmuc= $this->input->post('suadanhmuc');
     if(isset($suadanhmuc))
     {
-      $this->danhmuc_model->update($id);
+      $this->Danhmuc_model->update($id);
       $this->session->set_flashdata('message',' Sửa Thành Công');
       redirect('admin/danhmuc/index','refresh');
     }
@@ -52,7 +52,7 @@ class danhmuc extends Admin_Controller
     public function delete()
     {
       $id=$this->uri->segment(4);
-      $this->danhmuc_model->delete($id);
+      $this->Danhmuc_model->delete($id);
       $this->session->set_flashdata('message','Xóa Thành Công');
       redirect('admin/danhmuc/index','refresh');
     }
