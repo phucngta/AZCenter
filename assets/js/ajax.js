@@ -45,6 +45,21 @@ function getUsers(group_id)
 		}
 	} 
 }
+function getKhoahoc(makh) 
+{
+	xmlHttp = new createXmlHttp();
+	url = 'khoahoc/indexs/'+makh;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
+		{
+			document.getElementById('ajax_display').innerHTML = xmlHttp.responseText;
+		}
+	} 
+}
 
 function previewImage(input) 
 {

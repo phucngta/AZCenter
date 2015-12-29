@@ -11,6 +11,15 @@ class Khoahoc_model extends CI_model
     $query_result= $query->result_object();
     return $query_result; 
   }
+
+    public function shows($id)
+  {
+    // $this->db->where("makh","$id");
+    $query=$this->db->query("select * from khoahoc where makh=$id");
+    $query_result= $query->result_object();
+    return $query_result; 
+  }
+
   public  function taoma($MAKH = NULL)
   {
     $ma=$MAKH;
