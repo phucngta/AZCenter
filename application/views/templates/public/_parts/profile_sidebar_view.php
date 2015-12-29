@@ -47,17 +47,4 @@
 					</div>
 					<!-- END MENU -->
 				</div>
-			</div>
-
-			<!-- Content -->
-			<div class="col-md-9">
-				<div class="profile-content">
-					<div id="content"></div>
-				</div>
-			</div>
-			<!-- End content -->
 			
-		</div>
-	</div>
-	<!-- END SIDEBAR MENU -->
-</div>

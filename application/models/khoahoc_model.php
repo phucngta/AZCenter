@@ -5,11 +5,19 @@ class Khoahoc_model extends CI_model
   {
     parent::__contruct();
   }
+  public function show_theo_danh_muc($madm)
+  {
+    $madm = $this->db->escape($madm);
+    $str = 'select * from khoahoc where madm ='.$madm;
+    $query = $this->db->query($str);
+    $query_result = $query->result();
+    return $query_result;
+  }
   public function show()
   {
     $query= $this->db->get('khoahoc');
     $query_result= $query->result_object();
-    return $query_result; 
+    return $query_result;
   }
   public  function taoma($MAKH = NULL)
   {
@@ -63,3 +71,4 @@ class Khoahoc_model extends CI_model
 
 }
 ?>
+

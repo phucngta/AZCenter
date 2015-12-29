@@ -8,10 +8,12 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/flat-ui.min.css')?>">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/main.css')?>">
-
+	<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/js/ajax.js')?>"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/js/formvalid.js')?>"></script>
+
 </head>
 
 <body>
@@ -30,16 +32,16 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav">
-
+			
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> &nbsp; Danh Mục Khóa Học<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Tiếng Anh Thương Mại</a></li>
-						<li><a href="#">Tiếng Anh Học Thuật</a></li>
-						<li><a href="#">Tiếng Anh TOIEC</a></li>
-						<li><a href="#">Tiếng Anh Thi TOFEL</a></li>
+					<?php foreach ($danhmuc as $key => $value) { $url ="course/$value->madm";?>
+					<?php echo '<li><a href="'.$url.'">'.$value->tendm.'</a></li>'?>
+					<?php }?>
 					</ul>
 				</li>
+				
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> &nbsp; Liên Hệ <b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -135,3 +137,5 @@
         <?php
       }
       ?>
+
+

@@ -43,22 +43,24 @@
 				<a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
 		</div>
-		<div class=" col-sm-4 col-md-4  ">
+		<div class=" col-sm-4 col-md-4">
 		<h5 align="center">KHÓA HỌC NỔI BẬT</h5>
 		<hr></hr>
-			<div class="panel panel-danger">
-				  <div class="panel-heading">
-						<h3 class="panel-title">TIẾNG ANH CHUYÊN NGÀNH CNTT</h3>
-				  </div>
-				  <div class="panel-body">
-						<img src="<?php echo base_url('assets/img/consult.png')?>" class="img-responsive" alt="Image">
-						<ul class="list-group">
-							<li class="list-group-item">Giáo Viên dạy:</li>
-							<li class="list-group-item">Số lượng học viên</li>
-							<li class="list-group-item">Mô Tả Khóa học</li>
-						</ul>
-				  </div>
-			</div>
+								<div class="panel price panel-green">
+								<div class="panel-heading text-center">
+								</div>
+								<div class="panel-body text-center">
+									<img src="<?php echo base_url('assets/img/pencil_icon.png')?>" class="img-responsive" alt="Image">
+								</div>
+								<ul class="list-group list-group-flush text-center">
+									<li class="list-group-item"><i class="icon-ok text-danger"></i><strong>Tiếng Anh Chuyên Ngành CNTT</strong></li>
+									<li class="list-group-item"><i class="icon-ok text-danger"></i>0 VND</li>
+									<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+								</ul>
+								<div class="panel-footer">
+									<a class="btn btn-lg btn-block btn-success" href="#">Đăng Ký Ngay</a>
+								</div>
+								</div>
 
 		</div>
 		<div id="line"></div>
@@ -67,18 +69,36 @@
 			<div id="khoa_hoc">
 			<span><h3 align="center">THÔNG TIN CÁC KHÓA HỌC</h3></span>
 			<hr></hr>
-				
+			
 					
-				
+						<?php foreach ($khoahoc as $key => $value) {
+							$url =$value->picture;
+							?>
 						<div class="col-md-4">
-							<div class="panel panel-info cell">
-								<div class="panel-heading"><span><i class="fa fa-bus"></i>&nbsp; Tiếng Anh Văn Phòng</span></div>
-								<div class="panel-body">
-									<img src="<?php echo base_url('assets/img/Books.png')?>" class="img-responsive" alt="Image">
+							<div class="panel price panel-red">
+								<div class="panel-heading text-center">
 								</div>
-							</div>
+								<div class="panel-body text-center">
+									<img src="<?php echo $value->picture?>" class="img-responsive" alt="Image">
+								</div>
+								<ul class="list-group list-group-flush text-center">
+									<li class="list-group-item"><i class="icon-ok text-danger"></i><strong><?php echo $value->tenkh;?></strong></li>
+									<li class="list-group-item"><i class="icon-ok text-danger"></i><?php echo number_format($value->hocphi);?>VND</li>
+									<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+								</ul>
+								<div class="panel-footer">
+									<a class="btn btn-lg btn-block btn-danger" href="#">Đăng Ký Ngay</a>
+								</div>
+								</div>
+							<!-- <div class="panel panel-info cell">
+								<div class="panel-heading"><span><i class="fa fa-bus"></i>&nbsp;<?php echo $value->tenkh?></span></div>
+								<div class="panel-body">
+									<img src="<?php echo $url;?>" class="img-responsive" alt="Image">
+								</div>
+							</div> -->
 						</div>
-						<div class="col-md-4">
+						<?php }?>
+						<!-- <div class="col-md-4">
 							<div class="panel panel-info cell">
 								<div class="panel-heading"><span><i class="fa fa-bus"></i>&nbsp;Tiếng Anh Giao Tiếp </span></div>
 								<div class="panel-body">
@@ -93,9 +113,9 @@
 									<img src="<?php echo base_url('assets/img/pencil_icon.png')?>" class="img-responsive" alt="Image">
 								</div>
 							</div>
-						</div>
+						</div> -->
 						
-						<div class="col-md-4">
+						<!-- <div class="col-md-4">
 							<div class="panel panel-info cell">
 								<div class="panel-heading"><span><i class="fa fa-bus"></i>&nbsp;Tiếng Anh Cho Trẻ Em </span></div>
 								<div class="panel-body">
@@ -118,7 +138,7 @@
 									<img src="<?php echo base_url('assets/img/design.png')?>" class="img-responsive" alt="Image">
 								</div>
 							</div>
-						</div>
+						</div> -->
 					
 				</div>
 				
