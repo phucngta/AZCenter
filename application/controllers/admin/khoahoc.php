@@ -23,6 +23,13 @@ class khoahoc extends Admin_Controller
     $this->data['khoahoc']= $this->Khoahoc_model->show();
     $this->render('admin/khoahoc_view/khoahoc_list_view');
   }
+  public function indexs($id)
+  {
+    $ma=$id;
+    $this->data['page_title']='Xem Khóa Học ';
+    $this->data['khoahoc']= $this->Khoahoc_model->shows($ma);
+    $this->render('admin/khoahoc_view/khoahoc_list_view');
+  }
   public function add()
   {
     $this->data['page_title']='Thêm Khóa Học';
