@@ -5,9 +5,8 @@
 			<div class="col-md-3">
 				<?php $this->load->view('templates/public/_parts/profile_sidebar_view.php') ;?>
 			</div>
-				<center>
-				
-				<!-- <?php $this->load->view('templates/public/_parts/profile_content_view.php', FALSE);?> -->
-				</center>
-				<br>
-				<br>
+			<center>
+				<?php echo $profile_content ;?>
+			</center>
+			<br>
+			<br>
