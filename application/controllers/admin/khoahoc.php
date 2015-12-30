@@ -66,12 +66,12 @@ class Khoahoc extends Admin_Controller
       $this->session->set_flashdata('message','Xóa Thành Công');
       redirect('admin/khoahoc/index','refresh');
     }
-    public function show_theo_hs($id=NULL)
-    {
-        if($id){
-          $id=$this->db->escape($id);
-          $
-        }
-    }
+    // public function show_theo_hs($id=NULL)
+    // {
+    //     if($id){
+    //       $id=$this->db->escape($id);
+    //       $
+    //     }
+    // }
 }
 ?>
