@@ -15,7 +15,7 @@ class Cthoc_model extends CI_model
   {
       $ma=$macth;
       $this->load->model('Taoma_model');
-      $ma=$this->Taoma_model->Timmacuoi("macth","chuongtrinhhoc",$ma,5);
+      $ma=$this->Taoma_model->Timmacuoi("macth","chuongtrinhhoc","CT",5);
       return $ma;
   }
   public function add()

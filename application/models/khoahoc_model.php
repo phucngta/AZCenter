@@ -30,7 +30,7 @@ class Khoahoc_model extends CI_model
   {
     $ma=$MAKH;
     $this->load->model('Taoma_model');
-    $ma=$this->Taoma_model->Timmacuoi("MAKH","khoahoc",$ma,5);
+    $ma=$this->Taoma_model->Timmacuoi("MAKH","khoahoc","KH",5);
     return $ma;
   }
   public function add($makh, $img)

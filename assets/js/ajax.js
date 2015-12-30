@@ -78,8 +78,9 @@ function getCoursesByTeacher(teacher_id)
 	} 
 }
 
-function getLesson(macth) 
+function getLesson() 
 {
+	macth = document.getElementById("macth").innerHTML;
 	xmlHttp = new createXmlHttp();
 	url = 'baihoc/index/'+macth;
 	xmlHttp.open("GET",url,true);
