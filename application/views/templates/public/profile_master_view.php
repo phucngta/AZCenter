@@ -4,8 +4,9 @@
 		<div class="row profile">
 			<div class="col-md-3">
 				<?php $this->load->view('templates/public/_parts/profile_sidebar_view.php') ;?>
-
-				<center>
-				</center>
-				<br>
-				<br>
+			</div>
+			<center>
+				<?php echo $profile_content ;?>
+			</center>
+			<br>
+			<br>

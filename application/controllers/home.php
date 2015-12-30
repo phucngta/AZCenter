@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class home extends Public_Controller
+class Home extends Public_Controller
 {
 	function __construct()
   {
@@ -11,5 +11,4 @@ class home extends Public_Controller
   {
     $this->render('public/home');
   }
-
 }
