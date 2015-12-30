@@ -8,8 +8,8 @@
       <div class="form-group">
         <?php 
         echo form_label('Avatar','avatar').'<br>';
-        if ($user->avatar != NULL) {
-            echo '<img alt="Avatar"  id="view" class="img-responsive" src="'.base_url($user->avatar).'">';
+        if ($user->picture != NULL) {
+            echo '<img alt="Avatar"  id="view" class="img-responsive" src="'.base_url($user->picture).'">';
         }
         else echo '<img alt="Avatar" id="view" class="img-responsive" src="'.base_url('uploads/avatar/no-user-image.gif').'">';
         ?>

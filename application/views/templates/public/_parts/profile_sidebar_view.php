@@ -1,7 +1,7 @@
 <div class="profile-sidebar">
 	<!-- SIDEBAR USERPIC -->
 	<div class="profile-userpic">
-		<img src="<?php echo base_url($current_user->avatar)?>" class="img-responsive" alt="Avatar">
+		<img src="<?php echo base_url($current_user->picture)?>" class="img-responsive" alt="Avatar">
 	</div>
 	<!-- END SIDEBAR USERPIC -->
 	<!-- SIDEBAR USER TITLE -->
@@ -47,17 +47,4 @@
 					</div>
 					<!-- END MENU -->
 				</div>
-			</div>
-
-			<!-- Content -->
-			<div class="col-md-9">
-				<div class="profile-content">
-					<div id="content"></div>
-				</div>
-			</div>
-			<!-- End content -->
 			
-		</div>
-	</div>
-	<!-- END SIDEBAR MENU -->
-</div>

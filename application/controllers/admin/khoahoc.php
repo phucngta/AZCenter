@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class khoahoc extends Admin_Controller
+class Khoahoc extends Admin_Controller
 {
 
   public function __construct()
@@ -17,19 +17,20 @@ class khoahoc extends Admin_Controller
     $this->upload_folder = 'course';
 
   }
-  public function index()
+  public function index($teacher_id = NULL)
   {
     $this->data['page_title']='Quản Lý Khóa Học';
-    $this->data['khoahoc']= $this->Khoahoc_model->show();
+    $this->data['khoahoc']= $this->Khoahoc_model->show($teacher_id);
     $this->render('admin/khoahoc_view/khoahoc_list_view');
   }
-  public function indexs($id)
+
+  public function listByStudents($student_id = NULL)
   {
-    $ma=$id;
-    $this->data['page_title']='Xem Khóa Học ';
-    $this->data['khoahoc']= $this->Khoahoc_model->shows($ma);
+    $this->data['page_title']='Quản Lý Khóa Học';
+    $this->data['khoahoc']= $this->Khoahoc_model->listByStudents($student_id);
     $this->render('admin/khoahoc_view/khoahoc_list_view');
   }
+
   public function add()
   {
     $this->data['page_title']='Thêm Khóa Học';
@@ -42,7 +43,7 @@ class khoahoc extends Admin_Controller
       $makh =  $this->Khoahoc_model->taoma();
       $this->upload($this->upload_folder, $makh);
 
-      $this->Khoahoc_model->add($makh, $this->additional_data['avatar']);
+      $this->Khoahoc_model->add($makh, $this->additional_data);
       $this->session->set_flashdata('message','Thêm Thành Công');
       redirect('admin/khoahoc/index','refresh');
     }
@@ -60,11 +61,10 @@ class khoahoc extends Admin_Controller
       //Upload Image
       $this->upload($this->upload_folder, $id);
 
-      $this->Khoahoc_model->update($id, $this->new_data['avatar']);
+      $this->Khoahoc_model->update($id, $this->new_data);
       $this->session->set_flashdata('message','Sửa Thành công');
-      // redirect('admin/khoahoc','refresh');
+      redirect('admin/khoahoc','refresh');
     }
-
   }
     public function delete()
     {

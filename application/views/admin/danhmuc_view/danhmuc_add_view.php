@@ -7,10 +7,10 @@
         <div class="form-group">
             <div class="form-group">
           <label >Mã Danh Mục</label>
-          <input type="text" class="form-control" name="madm" placeholder="1111" required>
+          <input type="text" class="form-control" name="madm" placeholder="" readonly>
         </div>
           <label >Tên Danh Mục</label>
-          <input type="text" class="form-control" name="tendm" placeholder="2222" required>
+          <input type="text" class="form-control" name="tendm" placeholder="" required>
         </div>
         <button type="submit" name="themdanhmuc" class="btn btn-primary btn-lg btn-block">Thêm danh mục</button>
     </form>

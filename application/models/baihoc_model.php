@@ -5,8 +5,11 @@ class Baihoc_model extends CI_model
   {
       parent::__contruct();
   }
-  public function show()
+  public function show($macth = NULL)
   {
+    if ($macth != NULL) {
+      $this->db->where("macth", $macth);
+    }
     $query= $this->db->get('baihoc');
     $query_result= $query->result_object();
     return $query_result;

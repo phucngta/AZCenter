@@ -51,19 +51,18 @@ class MY_Controller extends CI_Controller
     else
     {
       $finfo = $this->upload->data();
-      if ($file_name==NULL) {
+      if ($file_name == NULL) {
         $file_name = $finfo['file_name'];
       }
       //Resize 1
-      $avatar = './uploads/'.$upload_folder. "/".$file_name.'.jpg';
+      $picture = './uploads/'.$upload_folder. "/".$file_name.'.jpg';
       $configure['image_library'] = "gd2";
       $configure['source_image'] = './uploads/'.$finfo['file_name'];
       $configure['maintain_ratio'] = TRUE;
       $configure['remove_spaces'] = TRUE;
-      $configure['file_ext'] = '.jpg';
       $configure['width'] = "200";
       $configure['height'] = "200";
-      $configure['new_image'] = $avatar;
+      $configure['new_image'] = $picture;
       $this->load->library('image_lib',$configure);
       $this->image_lib->resize();
       $this->image_lib->clear();
@@ -77,12 +76,11 @@ class MY_Controller extends CI_Controller
       $this->image_lib->resize();
       $this->image_lib->clear();
 
-      $this->additional_data['avatar'] = $avatar;
+      $this->additional_data['picture'] = $picture;
       $this->additional_data['thumbnail'] = $thumb;
-      $this->new_data['avatar'] = $avatar;
+      $this->new_data['picture'] = $picture;
       $this->new_data['thumbnail'] = $thumb;
     }
-    
   }
 }
 
@@ -140,6 +138,10 @@ class Public_Controller extends MY_Controller
   function __construct()
   {
     parent::__construct();
+    $this->load->model('danhmuc_model');
+    $this->data['danhmuc'] = $this->danhmuc_model->show();
+    $this->load->model('khoahoc_model');
+    $this->data['khoahoc'] = $this->khoahoc_model->show();
   }
 
   protected function render($the_view = NULL, $template = 'public/public_master')

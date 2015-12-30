@@ -16,7 +16,7 @@
         {
           echo '<tr>';
           echo '<td>'.$group->id.'</td>';
-        // echo '<td>'.anchor('admin/users/index/'.$group->id,$group->name).'</td>';
+          // echo '<td>'.anchor('admin/users/index/'.$group->id,$group->name).'</td>';   
           echo '<td><a href ="#" onclick="getUsers('.$group->id.')" >'.$group->name.'</a></td>
           <td>'.$group->description.'</td><td>';
           if(!in_array($group->name, array('admin','student','teacher'))) echo ' '.anchor('admin/groups/edit/'.$group->id,'<span class="glyphicon glyphicon-pencil"></span>').' '.anchor('admin/groups/deleteGroup/'.$group->id,'<span class="glyphicon glyphicon-remove"></span>');

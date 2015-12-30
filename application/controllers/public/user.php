@@ -93,7 +93,7 @@ class user extends Public_Controller
 				return true;
 			}
 			else{
-				echo "Tên này đã tồn tại";
+				echo "Tên này đã có người sử dụng. Vui lòng chọn tên khác";
 				// return false;
 			}
 		}
@@ -114,7 +114,7 @@ class user extends Public_Controller
 				return true;
 			}
 			else{
-				echo "Email này đã tồn tại";
+				echo "Email này đã có người sử dụng. Vui lòng sử dụng email khác";
 				// return false;
 			}
 		}

@@ -9,7 +9,7 @@
           <input type="text" class="form-control" name="tenbh" placeholder="" required>
         </div> 
         <div class="form-group">
-          <label >Tên Chương Trình Học</label>
+          <label >Tên Chương Trình Đào Tạo</label>
           <?php
             $str=$this->db->get('chuongtrinhhoc');
             $object=$str->result_object();
