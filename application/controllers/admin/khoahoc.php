@@ -11,9 +11,9 @@ class Khoahoc extends Admin_Controller
       $this->session->set_flashdata('message','You are not allowed to access this page');
       redirect('admin','refresh');
     }
-    $this->load->model('cthoc_model');
-    $this->load->model('danhmuc_model');
-    $this->load->model('khoahoc_model');
+    $this->load->model('Cthoc_model');
+    $this->load->model('Danhmuc_model');
+    $this->load->model('Khoahoc_model');
     $this->upload_folder = 'course';
 
   }
@@ -43,7 +43,7 @@ class Khoahoc extends Admin_Controller
       $makh =  $this->Khoahoc_model->taoma();
       $this->upload($this->upload_folder, $makh);
 
-      $this->Khoahoc_model->add($makh, $this->additional_data['avatar']);
+      $this->Khoahoc_model->add($makh, $this->additional_data);
       $this->session->set_flashdata('message','Thêm Thành Công');
       redirect('admin/khoahoc/index','refresh');
     }
@@ -61,11 +61,10 @@ class Khoahoc extends Admin_Controller
       //Upload Image
       $this->upload($this->upload_folder, $id);
 
-      $this->Khoahoc_model->update($id, $this->new_data['avatar']);
+      $this->Khoahoc_model->update($id, $this->new_data);
       $this->session->set_flashdata('message','Sửa Thành công');
       redirect('admin/khoahoc','refresh');
     }
-
   }
     public function delete()
     {
@@ -74,12 +73,5 @@ class Khoahoc extends Admin_Controller
       $this->session->set_flashdata('message','Xóa Thành Công');
       redirect('admin/khoahoc/index','refresh');
     }
-    // public function show_theo_hs($id=NULL)
-    // {
-    //     if($id){
-    //       $id=$this->db->escape($id);
-    //       $
-    //     }
-    // }
 }
 ?>

@@ -35,8 +35,6 @@ class MY_Controller extends CI_Controller
 
   protected function upload($upload_folder='./uploads', $file_name)
   {
-    $avatar = '';
-    $thumb = '';
     //Upload Image
     $configure['allowed_types'] =   "gif|jpg|jpeg|png";  
     $configure['max_size']      =   "5000"; 
@@ -57,14 +55,14 @@ class MY_Controller extends CI_Controller
         $file_name = $finfo['file_name'];
       }
       //Resize 1
-      $avatar = './uploads/'.$upload_folder. "/".$file_name.'.jpg';
+      $picture = './uploads/'.$upload_folder. "/".$file_name.'.jpg';
       $configure['image_library'] = "gd2";
       $configure['source_image'] = './uploads/'.$finfo['file_name'];
       $configure['maintain_ratio'] = TRUE;
       $configure['remove_spaces'] = TRUE;
       $configure['width'] = "200";
       $configure['height'] = "200";
-      $configure['new_image'] = $avatar;
+      $configure['new_image'] = $picture;
       $this->load->library('image_lib',$configure);
       $this->image_lib->resize();
       $this->image_lib->clear();
@@ -77,11 +75,12 @@ class MY_Controller extends CI_Controller
       $this->image_lib->initialize($configure);
       $this->image_lib->resize();
       $this->image_lib->clear();
+
+      $this->additional_data['picture'] = $picture;
+      $this->additional_data['thumbnail'] = $thumb;
+      $this->new_data['picture'] = $picture;
+      $this->new_data['thumbnail'] = $thumb;
     }
-    $this->additional_data['avatar'] = $avatar;
-    $this->additional_data['thumbnail'] = $thumb;
-    $this->new_data['avatar'] = $avatar;
-    $this->new_data['thumbnail'] = $thumb;
   }
 }
 

@@ -1,7 +1,7 @@
 <div class="profile-sidebar">
 	<!-- SIDEBAR USERPIC -->
 	<div class="profile-userpic">
-		<img src="<?php echo base_url($current_user->avatar)?>" class="img-responsive" alt="Avatar">
+		<img src="<?php echo base_url($current_user->picture)?>" class="img-responsive" alt="Avatar">
 	</div>
 	<!-- END SIDEBAR USERPIC -->
 	<!-- SIDEBAR USER TITLE -->
