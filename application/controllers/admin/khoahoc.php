@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class khoahoc extends Admin_Controller
+class Khoahoc extends Admin_Controller
 {
 
   public function __construct()
@@ -43,7 +43,7 @@ class khoahoc extends Admin_Controller
       $makh =  $this->Khoahoc_model->taoma();
       $this->upload($this->upload_folder, $makh);
 
-      $this->Khoahoc_model->add($makh, $this->additional_data['avatar']);
+      $this->Khoahoc_model->add($makh, $this->additional_data);
       $this->session->set_flashdata('message','Thêm Thành Công');
       redirect('admin/khoahoc/index','refresh');
     }
@@ -61,11 +61,10 @@ class khoahoc extends Admin_Controller
       //Upload Image
       $this->upload($this->upload_folder, $id);
 
-      $this->Khoahoc_model->update($id, $this->new_data['avatar']);
+      $this->Khoahoc_model->update($id, $this->new_data);
       $this->session->set_flashdata('message','Sửa Thành công');
       redirect('admin/khoahoc','refresh');
     }
-
   }
     public function delete()
     {
