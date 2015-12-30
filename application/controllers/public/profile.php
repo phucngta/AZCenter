@@ -35,8 +35,8 @@ class profile extends Public_Controller
 			}
 		}
 
-		$the_view ='templates/public/_parts/profile_sidebar_view.php';
-		$this->data['profile_sidebar'] = (is_null($the_view)) ? '' : $this->load->view($the_view,$this->data, TRUE);;
+		// $the_view ='templates/public/_parts/profile_sidebar_view.php';
+		// $this->data['profile_sidebar'] = (is_null($the_view)) ? '' : $this->load->view($the_view,$this->data, TRUE);;
 		$this->render("public/profile_view");
 	}
 }
