@@ -17,12 +17,20 @@ class khoahoc extends Admin_Controller
     $this->upload_folder = 'course';
 
   }
-  public function index()
+  public function index($teacher_id = NULL)
   {
     $this->data['page_title']='Quản Lý Khóa Học';
-    $this->data['khoahoc']= $this->Khoahoc_model->show();
+    $this->data['khoahoc']= $this->Khoahoc_model->show($teacher_id);
     $this->render('admin/khoahoc_view/khoahoc_list_view');
   }
+
+  public function listByStudents($student_id = NULL)
+  {
+    $this->data['page_title']='Quản Lý Khóa Học';
+    $this->data['khoahoc']= $this->Khoahoc_model->listByStudents($student_id);
+    $this->render('admin/khoahoc_view/khoahoc_list_view');
+  }
+
   public function add()
   {
     $this->data['page_title']='Thêm Khóa Học';
@@ -55,7 +63,7 @@ class khoahoc extends Admin_Controller
 
       $this->Khoahoc_model->update($id, $this->new_data['avatar']);
       $this->session->set_flashdata('message','Sửa Thành công');
-      // redirect('admin/khoahoc','refresh');
+      redirect('admin/khoahoc','refresh');
     }
 
   }

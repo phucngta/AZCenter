@@ -46,6 +46,55 @@ function getUsers(group_id)
 	} 
 }
 
+function getCoursesByStudent(student_id) 
+{
+	xmlHttp = new createXmlHttp();
+	url = 'khoahoc/listByStudents/'+student_id;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
+		{
+			document.getElementById('ajax_display').innerHTML = xmlHttp.responseText;
+		}
+	} 
+}
+
+function getCoursesByTeacher(teacher_id) 
+{
+	xmlHttp = new createXmlHttp();
+	url = 'khoahoc/index/'+teacher_id;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
+		{
+			document.getElementById('ajax_display').innerHTML = xmlHttp.responseText;
+		}
+	} 
+}
+
+function getLesson() 
+{
+	macth = document.getElementById("macth").innerHTML;
+	xmlHttp = new createXmlHttp();
+	url = 'baihoc/index/'+macth;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
+		{
+			document.getElementById('ajax_display').innerHTML = xmlHttp.responseText;
+		}
+	} 
+}
+
 function previewImage(input) 
 {
 	if (input.files && input.files[0]) 
