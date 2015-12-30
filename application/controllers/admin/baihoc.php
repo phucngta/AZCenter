@@ -14,10 +14,10 @@ class Baihoc extends Admin_Controller
     $this->load->model('Cthoc_model');
     $this->load->model('Baihoc_model');
   }
-  public function index()
+  public function index($macth = NULL)
   {
     $this->data['page_title']='Quản Lý Bài Học';
-    $this->data['baihoc']= $this->Baihoc_model->show();
+    $this->data['baihoc']= $this->Baihoc_model->show($macth);
     $this->render('admin/baihoc_view/baihoc_list_view');
   }
   public function add()

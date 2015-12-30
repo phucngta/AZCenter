@@ -57,8 +57,7 @@ foreach($khoahoc as $kh)
         <div class="form-group">
           <label >Tên Giảng Viên</label>
           <?php
-            $str=$this->db->get('users');
-            $object=$str->result_object();
+            $object = $this->ion_auth->users('3')->result();
             echo "<select name='teacher_id' class='form-control'>";
             foreach ($object as $value) {
               echo "<option value=".$value->id.">".$value->name."</option>";

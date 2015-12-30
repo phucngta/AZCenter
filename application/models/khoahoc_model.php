@@ -5,6 +5,7 @@ class Khoahoc_model extends CI_model
   {
     parent::__contruct();
   }
+
   public function show_theo_danh_muc($madm)
   {
     $madm = $this->db->escape($madm);
@@ -13,17 +14,33 @@ class Khoahoc_model extends CI_model
     $query_result = $query->result();
     return $query_result;
   }
-  public function show()
+
+  public function show($teacher_id = NULL)
   {
-    $query= $this->db->get('khoahoc');
+    if ($teacher_id != NULL) {
+      $this->db->where("teacher_id", $teacher_id);
+    }
+    $query = $this->db->get('khoahoc');
     $query_result= $query->result_object();
     return $query_result;
   }
+
+  public function listByStudents($student_id)
+  {
+    $query = $this->db->query('SELECT kh.makh, kh.tenkh, kh.macth, kh.tgbd, kh.tgkt, kh.teacher_id 
+              FROM users AS us 
+              INNER JOIN ctkhoahoc AS ctkh ON us.id = ctkh.student_id
+              INNER JOIN khoahoc AS kh ON ctkh.makh = kh.makh
+              WHERE us.id ='.$student_id);
+    $query_result= $query->result_array();
+    return $query_result; 
+  }
+
   public  function taoma($MAKH = NULL)
   {
     $ma=$MAKH;
     $this->load->model('Taoma_model');
-    $ma=$this->Taoma_model->Timmacuoi("MAKH","khoahoc",$ma,5);
+    $ma=$this->Taoma_model->Timmacuoi("MAKH","khoahoc","KH",5);
     return $ma;
   }
   public function add($makh, $img)
