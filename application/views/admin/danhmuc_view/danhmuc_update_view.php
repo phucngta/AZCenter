@@ -18,10 +18,10 @@ foreach($danhmuc as $dmc)
         <div class="form-group">
             <div class="form-group">
           <label >Mã Danh Mục</label>
-          <input type="text" value="<?php echo "$madm"  ?>" class="form-control" name="madm" placeholder="1111" readonly>
+          <input type="text" value="<?php echo "$madm"  ?>" class="form-control" name="madm" placeholder="" readonly>
         </div>
           <label >Tên Danh Mục</label>
-          <input type="text" value="<?php echo "$tendm"  ?>"  class="form-control" name="tendm" placeholder="2222" required>
+          <input type="text" value="<?php echo "$tendm"  ?>"  class="form-control" name="tendm" placeholder="" required>
         </div>
         <button type="submit" name="suadanhmuc" class="btn btn-primary btn-lg btn-block">Sửa danh mục </button>
     </form>

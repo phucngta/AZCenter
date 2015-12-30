@@ -45,10 +45,43 @@ function getUsers(group_id)
 		}
 	} 
 }
-function getKhoahoc(makh) 
+
+function getCoursesByStudent(student_id) 
 {
 	xmlHttp = new createXmlHttp();
-	url = 'khoahoc/indexs/'+makh;
+	url = 'khoahoc/listByStudents/'+student_id;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
+		{
+			document.getElementById('ajax_display').innerHTML = xmlHttp.responseText;
+		}
+	} 
+}
+
+function getCoursesByTeacher(teacher_id) 
+{
+	xmlHttp = new createXmlHttp();
+	url = 'khoahoc/index/'+teacher_id;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
+		{
+			document.getElementById('ajax_display').innerHTML = xmlHttp.responseText;
+		}
+	} 
+}
+
+function getLesson(macth) 
+{
+	xmlHttp = new createXmlHttp();
+	url = 'baihoc/index/'+macth;
 	xmlHttp.open("GET",url,true);
 	xmlHttp.send(null);
 

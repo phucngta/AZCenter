@@ -35,20 +35,8 @@
         <td>'.$std->age.'</td>
         <td>'.$std->email.'</td>
         <td>'.$std->phone.'</td>'; 
-
-        foreach($sts as $st){
-        if($st->student_id==$std->id)
-        {
-        echo '<td><a href="#" { onclick="getKhoahoc('.$st->makh.')" class="btn btn-primary">Xem khóa học</a></td>';
-        //echo '<td>'.$st->makh.'</td>';
-        }
-        break;
-        }
-        echo '</tr>'; 
-
-        
+        echo '<td><a href="#"  onclick="getCoursesByStudent('.$std->id.')" class="btn btn-primary">Xem khóa học</a></td>';
         echo '</tr>';
-        
       }
       echo '</table>';
       ?>

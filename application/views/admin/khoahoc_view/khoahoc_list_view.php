@@ -18,24 +18,21 @@
     <div class="col-lg-12" style="margin-top: 10px;">
       <table class="table table-hover table-bordered table-condensed">
       <tr><td></td><td>Mã Khóa Học</td><td>Khóa Học</td><td>Bắt Đầu</td><td>Kết Thúc</td>
-          <td>Học Phí</td><td>Giáo Viên</td><td>Chương Trình Học</td><td>Danh Mục</td>
+          <td>Học Phí</td><td>Giáo Viên</td><!-- <td>Chương Trình Học</td><td>Danh Mục</td> -->
       </tr>
       <?php foreach ($khoahoc as $kh) {?>
         <tr>
-          <?php if($this->ion_auth->in_group('admin'))
-          { ?>
           <td><a href="<?php echo base_url('admin/khoahoc/update/'.$kh->makh);?>"><span class="glyphicon glyphicon-pencil"></span></a>
               <a href="<?php echo base_url('admin/khoahoc/delete/'.$kh->makh); ?>"><span class="glyphicon glyphicon-remove"></span></a>
           </td>
-          <?php } else echo '<td></td>'?>
           <td><?php echo $kh->makh ?></td>
           <td><?php echo $kh->tenkh ?></td>
           <td><?php echo $kh->tgbd ?></td>
           <td><?php echo $kh->tgkt ?></td>
           <td><?php echo $kh->hocphi ?></td>
           <td><?php foreach ($sts as $ts) {if($ts->id==$kh->teacher_id){ echo $ts->name; break;}}?></td>
-          <td><?php foreach ($cthoc as $t) {if($t->macth==$kh->macth){ echo $t->tencth; break;}}?></td>
-          <td><?php foreach ($dmc as $tr) {if($tr->madm==$kh->madm){ echo $tr->tendm; break;}}?></td>
+          <!-- <td><?php foreach ($cthoc as $t) {if($t->macth==$kh->macth){ echo $t->tencth; break;}}?></td>
+          <td><?php foreach ($dmc as $tr) {if($tr->madm==$kh->madm){ echo $tr->tendm; break;}}?></td> -->
           
         </tr>
       <?php } ?>

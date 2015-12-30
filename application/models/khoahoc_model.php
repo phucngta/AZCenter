@@ -5,18 +5,24 @@ class Khoahoc_model extends CI_model
   {
     parent::__contruct();
   }
-  public function show()
+  public function show($teacher_id = NULL)
   {
-    $query= $this->db->get('khoahoc');
+    if ($teacher_id != NULL) {
+      $this->db->where("teacher_id", $teacher_id);
+    }
+    $query = $this->db->get('khoahoc');
     $query_result= $query->result_object();
     return $query_result; 
   }
 
-    public function shows($id)
+  public function listByStudents($student_id)
   {
-    // $this->db->where("makh","$id");
-    $query=$this->db->query("select * from khoahoc where makh=$id");
-    $query_result= $query->result_object();
+    $query = $this->db->query('SELECT kh.makh, kh.tenkh, kh.macth, kh.tgbd, kh.tgkt, kh.teacher_id 
+              FROM users AS us 
+              INNER JOIN ctkhoahoc AS ctkh ON us.id = ctkh.student_id
+              INNER JOIN khoahoc AS kh ON ctkh.makh = kh.makh
+              WHERE us.id ='.$student_id);
+    $query_result= $query->result_array();
     return $query_result; 
   }
 
