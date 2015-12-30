@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class khoahoc extends Admin_Controller
+class Khoahoc extends Admin_Controller
 {
 
   public function __construct()
@@ -11,9 +11,9 @@ class khoahoc extends Admin_Controller
       $this->session->set_flashdata('message','You are not allowed to access this page');
       redirect('admin','refresh');
     }
-    $this->load->model('Cthoc_model');
-    $this->load->model('Danhmuc_model');
-    $this->load->model('Khoahoc_model');
+    $this->load->model('cthoc_model');
+    $this->load->model('danhmuc_model');
+    $this->load->model('khoahoc_model');
     $this->upload_folder = 'course';
 
   }
@@ -65,6 +65,13 @@ class khoahoc extends Admin_Controller
       $this->Khoahoc_model->delete($id);
       $this->session->set_flashdata('message','Xóa Thành Công');
       redirect('admin/khoahoc/index','refresh');
+    }
+    public function show_theo_hs($id=NULL)
+    {
+        if($id){
+          $id=$this->db->escape($id);
+          $
+        }
     }
 }
 ?>
