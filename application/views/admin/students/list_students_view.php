@@ -4,10 +4,6 @@
     <div class="col-lg-12">
       <h1>Danh Sách Học Viên</h1>
     </div>
-    <?php
-          $str1=$this->db->get('ctkhoahoc');
-          $sts=$str1->result_object();
-    ?>
   </div>
   <div class="row">
     <div class="col-lg-12" style="margin-top: 10px;">
@@ -16,7 +12,7 @@
       echo '<table class="table table-hover table-bordered table-condensed">';
       echo '<tr>
       <td></td><td>Avatar</td><td>Tên Học Viên</td><td>Tuổi</td><td>Email</td><td>Số Điện Thoại</td><td></td></tr>';
-      foreach ($users as $std) 
+      foreach ($students as $std) 
       {
         echo '<tr>';
         echo '<td>'.anchor('admin/students/edit/'.$std->id,'<span class="glyphicon glyphicon-pencil"></span>');

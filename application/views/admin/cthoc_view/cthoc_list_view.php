@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-<dv class="container-fluid" >
+<div class="container-fluid" >
   <div class="row">
     <div class="col-lg-12">
       <h1>Danh Sách Chương Trình Đào Tạo </h1>
@@ -22,6 +22,5 @@
       </table>
     </div>
   </div>
-  <div class="row" id='test'></div>
   <div class="row" id='ajax_display'></div>
 </div>

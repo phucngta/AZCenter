@@ -11,7 +11,7 @@
       echo '<table class="table table-hover table-bordered table-condensed">';
       echo '<tr>
       <td></td><td>Avatar</td><td>Tên Giảng Viên</td><td>Tuổi</td><td>Email</td><td>Số Điện Thoại</td><td></td></tr>';
-      foreach ($users as $tch) 
+      foreach ($teachers as $tch) 
       {
         echo '<tr>';
         

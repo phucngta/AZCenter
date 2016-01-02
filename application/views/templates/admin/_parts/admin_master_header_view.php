@@ -9,8 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/flat-ui.min.css')?>">
-  <link href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css');?>" rel="stylesheet"  type="text/css">
+  <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/flat-ui.min.css')?>"> -->
+  <!-- <link href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css');?>" rel="stylesheet"  type="text/css"> -->
 
   <!-- Latest compiled and minified CSS & JS -->
   
