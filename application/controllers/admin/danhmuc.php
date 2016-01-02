@@ -16,14 +16,14 @@ class danhmuc extends Admin_Controller
 
   public function index()
   {
-    $this->data['page_title']='Quản Lý Danh Mục';
+    $this->data['page_title']='Quản lý danh mục';
     $this->data['danhmuc']= $this->Danhmuc_model->show();
     $this->render('admin/danhmuc_view/danhmuc_list_view');
   }
   
   public function add()
   {
-    $this->data['page_title']='Thêm Danh Mục';
+    $this->data['page_title']='Thêm danh mục';
     $this->render('admin/danhmuc_view/danhmuc_add_view');
     $themdanhmuc=$this->input->post('themdanhmuc');
     if(isset($themdanhmuc))
@@ -36,7 +36,7 @@ class danhmuc extends Admin_Controller
 
    public function update()
   {
-    $this->data['page_title']='Sửa Danh Mục';
+    $this->data['page_title']='Sửa danh mục';
     $this->data['danhmuc']= $this->Danhmuc_model->show();
     $this->render('admin/danhmuc_view/danhmuc_update_view');
     $id= $this->uri->segment(4);

@@ -16,7 +16,7 @@ class Baihoc extends Admin_Controller
   }
   public function index($macth = NULL)
   {
-    $this->data['page_title']='Quản Lý Bài Học';
+    $this->data['page_title']='Quản lý bài học';
     $this->data['baihoc']= $this->Baihoc_model->show($macth);
     $this->render('admin/baihoc_view/baihoc_list_view');
   }

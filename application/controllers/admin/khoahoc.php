@@ -19,7 +19,7 @@ class Khoahoc extends Admin_Controller
   }
   public function index($teacher_id = NULL)
   {
-    $this->data['page_title']='Quản Lý Khóa Học';
+    $this->data['page_title']='Quản lý khóa học';
     $this->data['khoahoc']= $this->Khoahoc_model->show($teacher_id);
     $this->render('admin/khoahoc_view/khoahoc_list_view');
   }
@@ -38,7 +38,7 @@ class Khoahoc extends Admin_Controller
 
   public function add()
   {
-    $this->data['page_title']='Thêm Khóa Học';
+    $this->data['page_title']='Thêm khóa học';
     $this->render('admin/khoahoc_view/khoahoc_add_view');
     $themkhoahoc=$this->input->post('themkhoahoc');
 
@@ -56,7 +56,7 @@ class Khoahoc extends Admin_Controller
 
    public function update()
   {
-    $this->data['page_title']='Sửa Khóa Học';
+    $this->data['page_title']='Sửa khóa học';
     $this->data['khoahoc']= $this->Khoahoc_model->show();
     $this->render('admin/khoahoc_view/khoahoc_update_view');
     $id= $this->uri->segment(4);

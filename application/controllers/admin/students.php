@@ -15,7 +15,7 @@ class students extends Admin_Controller
 
 	public function index()
 	{
-		$this->data['page_title'] = 'Học viên';
+		$this->data['page_title'] = 'Quản lý học viên';
 		//Group id học viên
 		$group_id = "2";
 		$this->data['students'] = $this->ion_auth->users($group_id)->result();
