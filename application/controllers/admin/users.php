@@ -17,7 +17,10 @@ class users extends Admin_Controller
   {
     $this->data['page_title'] = 'Users';
     $this->data['users'] = $this->ion_auth->users($group_id)->result();
-    $this->render('admin/users/list_users_view');
+    if ($group_id != NULL) {
+      $this->load->view('admin/users/list_users_view', $this->data);
+    }
+    else  $this->render('admin/users/list_users_view');
   }
 
   public function create()
