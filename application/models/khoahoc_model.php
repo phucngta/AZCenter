@@ -25,13 +25,23 @@ class Khoahoc_model extends CI_model
     return $query_result;
   }
 
-  public function listByStudents($student_id)
+  public function listByStudents($student_id = NULL)
   {
     $query = $this->db->query('SELECT kh.makh, kh.tenkh, kh.macth, kh.tgbd, kh.tgkt, kh.teacher_id 
       FROM users AS us 
       INNER JOIN ctkhoahoc AS ctkh ON us.id = ctkh.student_id
       INNER JOIN khoahoc AS kh ON ctkh.makh = kh.makh
       WHERE us.id ='.$student_id);
+    $query_result= $query->result_array();
+    return $query_result; 
+  }
+
+  public function getStudents($makh = NULL)
+  {
+    $query = $this->db->query('SELECT us.id, us.name, us.age, us.email, us.phone, us.thumbnail 
+      FROM users AS us 
+      INNER JOIN ctkhoahoc AS ctkh ON us.id = ctkh.student_id
+      WHERE ctkh.makh LIKE "'.$makh.'"');
     $query_result= $query->result_array();
     return $query_result; 
   }

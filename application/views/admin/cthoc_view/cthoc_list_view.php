@@ -22,6 +22,5 @@
       </table>
     </div>
   </div>
-  <div class="row" id='test'></div>
   <div class="row" id='ajax_display'></div>
 </div>

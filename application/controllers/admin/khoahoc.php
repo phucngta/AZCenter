@@ -26,9 +26,14 @@ class Khoahoc extends Admin_Controller
 
   public function listByStudents($student_id = NULL)
   {
-    $this->data['page_title']='Quản Lý Khóa Học';
     $this->data['khoahoc']= $this->Khoahoc_model->listByStudents($student_id);
     $this->render('admin/khoahoc_view/khoahoc_list_view');
+  }
+
+  public function getStudents($makh = NULL)
+  {
+    $this->data['students']= $this->Khoahoc_model->getStudents($makh);
+    $this->render('admin/students/list_students_view');
   }
 
   public function add()

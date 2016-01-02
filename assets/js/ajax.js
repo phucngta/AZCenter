@@ -78,6 +78,23 @@ function getCoursesByTeacher(teacher_id)
 	} 
 }
 
+function getStudents() 
+{
+	makh = document.getElementById("makh").innerHTML;
+	xmlHttp = new createXmlHttp();
+	url = 'khoahoc/getStudents/'+makh;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
+		{
+			document.getElementById('ajax_display').innerHTML = xmlHttp.responseText;
+		}
+	} 
+}
+
 function getLesson() 
 {
 	macth = document.getElementById("macth").innerHTML;
