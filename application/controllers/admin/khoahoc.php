@@ -21,19 +21,25 @@ class Khoahoc extends Admin_Controller
   {
     $this->data['page_title']='Quản lý khóa học';
     $this->data['khoahoc']= $this->Khoahoc_model->show($teacher_id);
-    $this->render('admin/khoahoc_view/khoahoc_list_view');
+    if ($teacher_id != NULL) {
+      $this->data['invisible_button'] = True;
+      $this->load->view('admin/khoahoc_view/khoahoc_list_view', $this->data);
+    }
+    else $this->render('admin/khoahoc_view/khoahoc_list_view');
   }
 
   public function listByStudents($student_id = NULL)
   {
     $this->data['khoahoc']= $this->Khoahoc_model->listByStudents($student_id);
-    $this->render('admin/khoahoc_view/khoahoc_list_view');
+    $this->data['invisible_button'] = True;
+    $this->load->view('admin/khoahoc_view/khoahoc_list_view', $this->data);
   }
 
   public function getStudents($makh = NULL)
   {
     $this->data['students']= $this->Khoahoc_model->getStudents($makh);
-    $this->render('admin/students/list_students_view');
+    $this->data['invisible_button'] = True;
+    $this->load->view('admin/students/list_students_view', $this->data);
   }
 
   public function add()

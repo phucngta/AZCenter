@@ -18,7 +18,10 @@ class Baihoc extends Admin_Controller
   {
     $this->data['page_title']='Quản lý bài học';
     $this->data['baihoc']= $this->Baihoc_model->show($macth);
-    $this->render('admin/baihoc_view/baihoc_list_view');
+    if ($macth != NULL) {
+      $this->load->view('admin/baihoc_view/baihoc_list_view', $this->data);
+    }
+    else  $this->render('admin/baihoc_view/baihoc_list_view');
   }
   public function add()
   {
