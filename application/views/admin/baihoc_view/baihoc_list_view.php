@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-<div class="container-fluid" >
+<!-- <div class="container-fluid" > -->
   <div class="row">
     <div class="col-lg-12">
       <h1>Danh Sách Bài Học</h1>
@@ -27,4 +27,4 @@
       </table>
     </div>
   </div>
-</div>
+<!-- </div> -->
