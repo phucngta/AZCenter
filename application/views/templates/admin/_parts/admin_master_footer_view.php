@@ -6,6 +6,7 @@
 
 	</div>
 </footer> -->
+
 <?php echo $before_body;?>
 </body>
 

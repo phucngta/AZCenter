@@ -10,13 +10,13 @@
   
   <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/sb-admin.css')?>">
-  <link href="<?php echo base_url('assets/css/font-awesome.min.css');?>" rel="stylesheet"  type="text/css">
-  <link href="<?php echo base_url('assets/css/plugins/morris.css');?>" rel="stylesheet"  type="text/css">
+  <link href="<?php echo base_url('assets/css/font-awesome.min.css');?>" rel="stylesheet" type="text/css">
+  <link href="<?php echo base_url('assets/css/plugins/morris.css');?>" rel="stylesheet" type="text/css">
 
   <!-- Latest compiled and minified CSS & JS -->
   
   <script src="//code.jquery.com/jquery.js"></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <!-- Offline -->
   <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"> </script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js');?>"> </script>
@@ -52,9 +52,9 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> <?php echo $current_user->name;?> <b class="caret"></b></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="<?php echo site_url('admin/profile');?>">Profile</a></li>
+                <li><a href="<?php echo site_url('admin/profile');?>"><i class="fa fa-fw fa-user"></i>Profile</a></li>
                 <?php echo $current_user_drop_menu?>
-                <li><a href="<?php echo site_url('admin/user/logout');?>">Logout</a></li>
+                <li><a href="<?php echo site_url('admin/user/logout');?>"><i class="fa fa-fw fa-power-off"></i>Logout</a></li>
               </ul>
             </li>
           </ul>
