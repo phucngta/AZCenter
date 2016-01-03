@@ -2,7 +2,6 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-4 col-lg-offset-4">
-      <h1>Thêm Bài Học</h1>
       <form method="post" name="thembaihoc">
         <div class="form-group">
           <label >Tên Bài Học</label>

@@ -20,7 +20,6 @@ foreach($khoahoc as $kh)
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-4 col-lg-offset-4">
-      <h1>Sửa Khóa Học</h1>
       <form enctype="multipart/form-data" method="post" name="suakhoahoc">
         <div class="form-group">
           <!-- <label >PICTURE</label> -->

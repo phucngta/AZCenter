@@ -9,7 +9,7 @@ class Baihoc extends Admin_Controller
     if(!$this->ion_auth->in_group('admin') && !$this->ion_auth->in_group('teacher'))
     {
       $this->session->set_flashdata('message','You are not allowed to access this page');
-      redirect('admin','refresh');
+      redirect('admin');
     }
     $this->load->model('Cthoc_model');
     $this->load->model('Baihoc_model');
@@ -17,6 +17,7 @@ class Baihoc extends Admin_Controller
   public function index($macth = NULL)
   {
     $this->data['page_title']='Quản lý bài học';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/ Quản lý bài học';
     $this->data['baihoc']= $this->Baihoc_model->show($macth);
     if ($macth != NULL) {
       $this->load->view('admin/baihoc_view/baihoc_list_view', $this->data);
@@ -26,19 +27,21 @@ class Baihoc extends Admin_Controller
   public function add()
   {
     $this->data['page_title']='Thêm Bài Học';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/baihoc").'"> Quản lý bài học</a> / Thêm bài học';
     $this->render('admin/baihoc_view/baihoc_add_view');
     $thembaihoc=$this->input->post('thembaihoc');
     if(isset($thembaihoc))
     {
       $this->Baihoc_model->add();
       $this->session->set_flashdata('message','Thêm Thành Công');
-      redirect('admin/baihoc/index','refresh');
+      redirect('admin/baihoc/index');
     }
   }
 
    public function update()
   {
     $this->data['page_title']='Sửa Bài Học';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/baihoc").'"> Quản lý bài học</a> / Sửa bài học';
     $this->data['baihoc']= $this->Baihoc_model->show();
     $this->render('admin/baihoc_view/baihoc_update_view');
     $id= $this->uri->segment(4);
@@ -47,7 +50,7 @@ class Baihoc extends Admin_Controller
     {
       $this->Baihoc_model->update($id);
       $this->session->set_flashdata('message','Sửa Thành công');
-      redirect('admin/baihoc','refresh');
+      redirect('admin/baihoc');
     }
 
   }
@@ -56,7 +59,7 @@ class Baihoc extends Admin_Controller
       $id=$this->uri->segment(4);
       $this->Baihoc_model->delete($id);
       $this->session->set_flashdata('message','Xóa Thành Công');
-      redirect('admin/baihoc/index','refresh');
+      redirect('admin/baihoc/index');
     }
 }
 ?>

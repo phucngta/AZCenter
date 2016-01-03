@@ -14,7 +14,6 @@ foreach($baihoc as $tr)
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-4 col-lg-offset-4">
-      <h1>Sửa Bài Học</h1>
       <form method="post" name="suabaihoc">
         <div class="form-group">
           <input type="hidden" value="<?php echo "$id"  ?>" class="form-control" name="id" placeholder="1111" readonly>

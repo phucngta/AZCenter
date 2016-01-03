@@ -1,19 +1,17 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-<div class="container" style="margin-top: 60px;">
   <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
-      <h2>Sửa Thông Tin Học Viên</h2>
+    <div class="col-lg-8 ">
       <?php echo form_open_multipart('',array('class'=>'form-horizontal'));?>
 
       <div class="form-group">
         <?php 
-        echo form_label('Avatar','avatar').'<br>';
+        echo form_label('Avatar','avatar').'<br><div class="col-sm-5">';
         if ($user->picture != NULL) {
             echo '<img alt="Avatar" id="view" class="img-responsive" src="'.base_url($user->picture).'">';
         }
         else echo '<img alt="Avatar" id="view" class="img-responsive" src="'.base_url('uploads/avatar/no-user-image.gif').'">';
         ?>
-      </div>
+      </div></div>
 
       <div class="form-group">
         Select Image To Upload:<br />
@@ -58,4 +56,3 @@
       <?php echo form_close();?>
     </div>
   </div>
-</div>
