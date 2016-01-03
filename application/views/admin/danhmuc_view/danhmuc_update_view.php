@@ -2,28 +2,27 @@
 <?php
 foreach($danhmuc as $dmc)
 {
-  $madm= $this->uri->segment(4);
-  if($madm== $dmc->madm)
-  {
-  $madm= $dmc->madm;
-  $tendm= $dmc->tendm;
-  }
+  // $madm= $this->uri->segment(4);
+  // if($madm== $dmc->madm)
+  // {
+  //   $madm= $dmc->madm;
+  //   $tendm= $dmc->tendm;
+  // }
+  echo $dmc->madm.'<div>'.$dmc->tendm.'</div>';
 }
- ?>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
-      <form method="post" name="suadanhmuc">
-        <div class="form-group">
-            <div class="form-group">
-          <label >Mã Danh Mục</label>
-          <input type="text" value="<?php echo "$madm"  ?>" class="form-control" name="madm" placeholder="" readonly>
+?>
+<div class="row">
+  <div class="col-lg-7">
+    <form action="<?php echo base_url().'admin/danhmuc/update'?>" method="post" name="suadanhmuc"  class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-3">Tên Danh Mục</label>
+        <div class="col-sm-6">
+          <input type="text" value="" class="form-control" name="tendm" placeholder="" required>
         </div>
-          <label >Tên Danh Mục</label>
-          <input type="text" value="<?php echo "$tendm"  ?>"  class="form-control" name="tendm" placeholder="" required>
-        </div>
-        <button type="submit" name="suadanhmuc" class="btn btn-primary btn-lg btn-block">Sửa danh mục </button>
-    </form>
-    </div>
-  </div>
-</div>
+        <div class="col-sm-3">
+         <button type="submit" name="suadanhmuc" class="btn btn-primary">Cập nhập</button>
+       </div>
+       <input type="hidden" name="madm" value="">
+     </form>
+   </div>
+ </div>

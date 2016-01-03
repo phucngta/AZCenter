@@ -29,6 +29,7 @@ function createXmlHttp()
 	return xmlHttp; 
 }
 
+// Trang admin
 function getUsers(group_id)
 {
 	xmlHttp = new createXmlHttp();
@@ -78,11 +79,26 @@ function getCoursesByTeacher(teacher_id)
 	} 
 }
 
-function getStudents() 
+function getStudents(makh) 
 {
-	makh = document.getElementById("makh").innerHTML;
 	xmlHttp = new createXmlHttp();
 	url = 'khoahoc/getStudents/'+makh;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
+		{
+			document.getElementById('ajax_display').innerHTML =  xmlHttp.responseText;
+		}
+	} 
+}
+
+function getLesson(macth) 
+{
+	xmlHttp = new createXmlHttp();
+	url = 'baihoc/index/'+macth;
 	xmlHttp.open("GET",url,true);
 	xmlHttp.send(null);
 
@@ -95,11 +111,26 @@ function getStudents()
 	} 
 }
 
-function getLesson() 
+function themdm() 
 {
-	macth = document.getElementById("macth").innerHTML;
 	xmlHttp = new createXmlHttp();
-	url = 'baihoc/index/'+macth;
+	url = 'danhmuc/add';
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
+		{
+			document.getElementById('ajax_display').innerHTML = xmlHttp.responseText;
+		}
+	} 
+}
+
+function suadm(madm) 
+{
+	xmlHttp = new createXmlHttp();
+	url = 'danhmuc/update/'+madm;
 	xmlHttp.open("GET",url,true);
 	xmlHttp.send(null);
 
@@ -127,6 +158,8 @@ function previewImage(input)
 	}
 }
 
+
+// Trang home
 function kiem_tra_user(str) 
 {
 	var ketqua = document.getElementById('ketqua');
