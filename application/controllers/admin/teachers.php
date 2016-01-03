@@ -48,7 +48,7 @@ class teachers extends Admin_Controller
 				redirect('admin/teachers', 'refresh');
 			}
 			$this->load->helper('form');
-			$this->render('admin/teachers/edit_teacher_view');
+			$this->render('admin/students/edit_student_view');
 		}
 		else
 		{
