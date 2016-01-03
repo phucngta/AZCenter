@@ -1,17 +1,11 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-<div class="container-fluid" >
-  <div class="row">
-    <div class="col-lg-12">
-      <h1>Danh Sách Học Viên</h1>
-    </div>
-  </div>
   <div class="row">
     <div class="col-lg-12" style="margin-top: 10px;">
 
       <?php
       echo '<table class="table table-hover table-bordered table-condensed">';
       echo '<tr>
-      <td></td><td>Avatar</td><td>Tên Học Viên</td><td>Tuổi</td><td>Email</td><td>Số Điện Thoại</td><td></td></tr>';
+      <td></td><td>Avatar</td><td>Tên Học Viên</td><td>Tuổi</td><td>Email</td><td>Số Điện Thoại</td></tr>';
       foreach ($students as $std) 
       {
         echo '<tr>';
@@ -30,13 +24,17 @@
         echo '<td>'.$std->name.'</td>
         <td>'.$std->age.'</td>
         <td>'.$std->email.'</td>
-        <td>'.$std->phone.'</td>'; 
-        echo '<td><a href="#"  onclick="getCoursesByStudent('.$std->id.')" class="btn btn-primary">Xem khóa học</a></td>';
+        <td>'.$std->phone.'</td>';
+        
+        $display = True;
+        if (isset($invisible_button))  $display = False;
+        if($display) echo '<td><a href="#"  onclick="getCoursesByStudent('.$std->id.')" class="btn btn-primary">Xem khóa học</a></td>';
         echo '</tr>';
       }
       echo '</table>';
       ?>
     </div>
   </div>
-  <div class="row" id='ajax_display'></div>
-</div>
+  <div class="row" >
+    <div class="col-lg-12" style="margin-top: 10px;" id='ajax_display'></div>
+  </div>

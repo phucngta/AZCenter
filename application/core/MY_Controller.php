@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+`<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MY_Controller extends CI_Controller
 {
@@ -15,6 +15,7 @@ class MY_Controller extends CI_Controller
     $this->data['current_user'] = $this->ion_auth->user()->row();
 
     $this->data['page_title'] = 'AzCenter';
+
     $this->data['before_head'] = '';
     $this->data['before_body'] ='';
   }
@@ -91,6 +92,7 @@ class Admin_Controller extends MY_Controller
   {
     parent::__construct();
     $this->data['page_title'] = 'Dashboard';
+    $this->data['nav'] = 'Dashboard';
     
     if (!$this->ion_auth->logged_in())
     {

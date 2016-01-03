@@ -9,20 +9,22 @@ class groups extends Admin_Controller
     if(!$this->ion_auth->in_group('admin'))
     {
       $this->session->set_flashdata('message','You are not allowed to visit the Groups page');
-      redirect('admin','refresh');
+      redirect('admin');
     }
   }
 
   public function index()
   {
-    $this->data['page_title'] = 'Groups';
+    $this->data['page_title'] = 'Quản lý nhóm';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/ Quản lý nhóm';
     $this->data['groups'] = $this->ion_auth->groups()->result();
     $this->render('admin/groups/list_groups_view');
   }
 
   public function create()
   {
-    $this->data['page_title'] = 'Create group';
+    $this->data['page_title'] = 'Tạo nhóm';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/groups").'"> Quản lý nhóm</a> / Tạo nhóm';
     $this->load->library('form_validation');
     $this->form_validation->set_rules('group_name','Group name','trim|required|is_unique[groups.name]');
     $this->form_validation->set_rules('group_description','Group description','trim|required');
@@ -38,14 +40,15 @@ class groups extends Admin_Controller
       $group_description = $this->input->post('group_description');
       $this->ion_auth->create_group($group_name, $group_description);
       $this->session->set_flashdata('message',$this->ion_auth->messages());
-      redirect('admin/groups','refresh');
+      redirect('admin/groups');
     }
   }
 
   public function edit($group_id = NULL)
   {
     $group_id = $this->input->post('group_id') ? $this->input->post('group_id') : $group_id;
-    $this->data['page_title'] = 'Edit group';
+    $this->data['page_title'] = 'Sửa nhóm';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/groups").'"> Quản lý nhóm</a> / Sửa nhóm';
     $this->load->library('form_validation');
 
     $this->form_validation->set_rules('group_name','Group name','trim|required');
@@ -73,7 +76,7 @@ class groups extends Admin_Controller
       $group_id = $this->input->post('group_id');
       $this->ion_auth->update_group($group_id, $group_name, $group_description);
       $this->session->set_flashdata('message',$this->ion_auth->messages());
-      redirect('admin/groups','refresh');
+      redirect('admin/groups');
     }
   }
 

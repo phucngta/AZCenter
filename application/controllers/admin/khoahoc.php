@@ -9,7 +9,7 @@ class Khoahoc extends Admin_Controller
     if(!$this->ion_auth->in_group('admin') && !$this->ion_auth->in_group('teacher'))
     {
       $this->session->set_flashdata('message','You are not allowed to access this page');
-      redirect('admin','refresh');
+      redirect('admin');
     }
     $this->load->model('Cthoc_model');
     $this->load->model('Danhmuc_model');
@@ -20,25 +20,33 @@ class Khoahoc extends Admin_Controller
   public function index($teacher_id = NULL)
   {
     $this->data['page_title']='Quản lý khóa học';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/ Quản lý khóa học';
     $this->data['khoahoc']= $this->Khoahoc_model->show($teacher_id);
-    $this->render('admin/khoahoc_view/khoahoc_list_view');
+    if ($teacher_id != NULL) {
+      $this->data['invisible_button'] = True;
+      $this->load->view('admin/khoahoc_view/khoahoc_list_view', $this->data);
+    }
+    else $this->render('admin/khoahoc_view/khoahoc_list_view');
   }
 
   public function listByStudents($student_id = NULL)
   {
     $this->data['khoahoc']= $this->Khoahoc_model->listByStudents($student_id);
-    $this->render('admin/khoahoc_view/khoahoc_list_view');
+    $this->data['invisible_button'] = True;
+    $this->load->view('admin/khoahoc_view/khoahoc_list_view', $this->data);
   }
 
   public function getStudents($makh = NULL)
   {
     $this->data['students']= $this->Khoahoc_model->getStudents($makh);
-    $this->render('admin/students/list_students_view');
+    $this->data['invisible_button'] = True;
+    $this->load->view('admin/students/list_students_view', $this->data);
   }
 
   public function add()
   {
     $this->data['page_title']='Thêm khóa học';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/khoahoc").'"> Quản lý khóa học</a> / Thêm khóa học';
     $this->render('admin/khoahoc_view/khoahoc_add_view');
     $themkhoahoc=$this->input->post('themkhoahoc');
 
@@ -50,13 +58,14 @@ class Khoahoc extends Admin_Controller
 
       $this->Khoahoc_model->add($makh, $this->additional_data);
       $this->session->set_flashdata('message','Thêm Thành Công');
-      redirect('admin/khoahoc/index','refresh');
+      redirect('admin/khoahoc/index');
     }
   }
 
    public function update()
   {
     $this->data['page_title']='Sửa khóa học';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/khoahoc").'"> Quản lý khóa học</a> / Sửa khóa học';
     $this->data['khoahoc']= $this->Khoahoc_model->show();
     $this->render('admin/khoahoc_view/khoahoc_update_view');
     $id= $this->uri->segment(4);
@@ -68,7 +77,7 @@ class Khoahoc extends Admin_Controller
 
       $this->Khoahoc_model->update($id, $this->new_data);
       $this->session->set_flashdata('message','Sửa Thành công');
-      redirect('admin/khoahoc','refresh');
+      redirect('admin/khoahoc');
     }
   }
     public function delete()
@@ -76,7 +85,7 @@ class Khoahoc extends Admin_Controller
       $id=$this->uri->segment(4);
       $this->Khoahoc_model->delete($id);
       $this->session->set_flashdata('message','Xóa Thành Công');
-      redirect('admin/khoahoc/index','refresh');
+      redirect('admin/khoahoc/index');
     }
 }
 ?>

@@ -14,11 +14,9 @@ foreach($baihoc as $tr)
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-4 col-lg-offset-4">
-      <h1>Sửa Bài Học</h1>
       <form method="post" name="suabaihoc">
         <div class="form-group">
-          <label >ID Bài Học</label>
-          <input type="text" value="<?php echo "$id"  ?>" class="form-control" name="id" placeholder="1111" readonly>
+          <input type="hidden" value="<?php echo "$id"  ?>" class="form-control" name="id" placeholder="1111" readonly>
         </div>
         <div class="form-group">
           <label  >Tên Bài Học</label>

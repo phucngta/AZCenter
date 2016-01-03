@@ -9,13 +9,14 @@ class teachers extends Admin_Controller
 		if(!$this->ion_auth->in_group('admin'))
 		{
 			$this->session->set_flashdata('message','You are not allowed to access Students page');
-			redirect('admin','refresh');
+			redirect('admin');
 		}
 	}
 
 	public function index()
 	{
 		$this->data['page_title'] = 'Quản lý giảng viên';
+		$this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/ Quản lý giảng viên';
 		//Group id giảng viên
 		$group_id = "3";
 		$this->data['teachers'] = $this->ion_auth->users($group_id)->result();
@@ -25,7 +26,8 @@ class teachers extends Admin_Controller
 	public function edit($user_id = NULL)
 	{
 		$user_id = $this->input->post('user_id') ? $this->input->post('user_id') : $user_id;
-		$this->data['page_title'] = 'Sửa thông tin giảng viên';
+		$this->data['page_title'] = 'Sửa giảng viên';
+		$this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/teachers").'"> Quản lý giảng viên</a> / Sửa giảng viên';
 		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('name', 'Name','trim');
@@ -64,7 +66,7 @@ class teachers extends Admin_Controller
 			$this->ion_auth->update($user_id, $this->new_data);
 
 			$this->session->set_flashdata('message',$this->ion_auth->messages());
-			redirect('admin/teachers','refresh');
+			redirect('admin/teachers');
 		}
 	}
 

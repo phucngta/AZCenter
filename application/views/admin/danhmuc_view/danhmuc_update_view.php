@@ -13,7 +13,6 @@ foreach($danhmuc as $dmc)
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-4 col-lg-offset-4">
-      <h1>Sửa Danh Mục</h1>
       <form method="post" name="suadanhmuc">
         <div class="form-group">
             <div class="form-group">
