@@ -11,7 +11,7 @@
                   <img alt="Avatar" id="view" class="img-responsive" src="<?php echo base_url('uploads/avatar/no-user-image.gif');?>">
                </div>
           </div>
-
+          
           <div class="form-group">
                <label class="control-label col-sm-3">Ảnh đại diện</label>
                <div class="col-sm-5">

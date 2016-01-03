@@ -31,7 +31,7 @@ class students extends Admin_Controller
 
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('name', 'Name','trim');
+		$this->form_validation->set_rules('name', 'Name','trim|required');
 		$this->form_validation->set_rules('phone','Phone','trim');
 		$this->form_validation->set_rules('age','Age','greater_than[0]|less_than[50]');
 		$this->form_validation->set_rules('email','Email','trim|required|valid_email');

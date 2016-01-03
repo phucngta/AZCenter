@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-4 col-lg-offset-4">
-    <img alt ="<?php echo '<h1>'.$this->config->item('cms_title').'</h1>';?>" src ="<?php echo base_url('assets/img/logo.png');?>">
+    <img alt ="<?php echo '<strong>'.$this->config->item('cms_title').'</strong>';?>" src ="<?php echo base_url('assets/img/logo.png');?>">
   </div>
   <div class="col-lg-4 col-lg-offset-4">
     <?php echo $this->session->flashdata('message');?>

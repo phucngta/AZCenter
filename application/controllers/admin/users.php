@@ -66,7 +66,7 @@ class users extends Admin_Controller
       redirect('admin/users');  
     }
   }
-
+  
   public function edit($user_id = NULL)
   {
     $user_id = $this->input->post('user_id') ? $this->input->post('user_id') : $user_id;

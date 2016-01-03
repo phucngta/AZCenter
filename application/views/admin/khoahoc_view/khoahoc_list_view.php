@@ -23,7 +23,7 @@ $sts=$str2->result_object();
           <td><a href="<?php echo base_url('admin/khoahoc/update/'.$kh->makh);?>"><span class="glyphicon glyphicon-pencil"></span></a>
             <a href="<?php echo base_url('admin/khoahoc/delete/'.$kh->makh); ?>"><span class="glyphicon glyphicon-remove"></span></a>
           </td>
-          <td id="makh"><?php echo $kh->makh ?></td>
+          <td><?php echo $kh->makh ?></td>
           <td><?php echo $kh->tenkh ?></td>
           <td><?php echo $kh->tgbd ?></td>
           <td><?php echo $kh->tgkt ?></td>
@@ -34,7 +34,7 @@ $sts=$str2->result_object();
           $display = True;
           if (isset($invisible_button)) 
             $display = False;
-          if ($display) echo '<td><a href="#"  onclick="getStudents()" class="btn btn-primary">Danh sách học viên</a></td>';
+          if ($display) echo '<td><a href="#"  onclick="getStudents(\''.$kh->makh.'\')" class="btn btn-primary">Danh sách học viên</a></td>';
           ?>
         </tr>
         <?php } ?>
