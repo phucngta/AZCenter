@@ -1,7 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <div class="row">
   <div class="col-lg-12">
-    <h1>Danh Sách Chương Trình Đào Tạo </h1>
     <a href="<?php echo base_url('admin/cthoc/add');?>" class="btn btn-primary">Thêm Chương Trình</a> 
   </div>
 </div>
@@ -23,5 +22,5 @@
   </div>
 </div>
 <div class="row" >
-  <div class="col-lg-10" style="margin-top: 10px;" id='ajax_display'></div>
+  <div class="col-lg-12" style="margin-top: 10px;" id='ajax_display'></div>
 </div>

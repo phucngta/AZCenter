@@ -1,7 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <div class="row">
   <div class="col-lg-12">
-    <h1>Danh Sách Khoá Học</h1>
     <a href="<?php echo base_url('admin/khoahoc/add');?>" class="btn btn-primary">Thêm Khóa Học</a> 
   </div>
 </div>

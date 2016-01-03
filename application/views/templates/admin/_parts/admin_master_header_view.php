@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo site_url('admin');?>"><?php echo $this->config->item('cms_title');?></a>
+          <a class="navbar-brand" href="<?php echo site_url('admin');?>"><strong><i><?php echo $this->config->item('cms_title');?></i></strong></a>
         </div>
 
           <!-- Top Menu Items -->
@@ -53,7 +53,11 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> <?php echo $current_user->name;?> <b class="caret"></b></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="<?php echo site_url('admin/profile');?>"><i class="fa fa-fw fa-user"></i>Profile</a></li>
+                <li><a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a> </li>
+                <li><a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a></li>
+                
                 <?php echo $current_user_drop_menu?>
+                <li class="divider"></li>
                 <li><a href="<?php echo site_url('admin/user/logout');?>"><i class="fa fa-fw fa-power-off"></i>Logout</a></li>
               </ul>
             </li>
@@ -66,7 +70,39 @@
           </ul>
         </div>
         <!-- End Side Bar -->
+
+
       </nav>
       <!-- End Navigation -->
+
+        <div id="page-wrapper">
+          <div class="container-fluid">
+          <!-- Message -->
+          <?php
+          if($this->session->flashdata('message'))
+            { ?>
+            <div class="col-lg-12">
+              <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+                  <?php echo $this->session->flashdata('message');?>
+                </div>
+              </div>
+            <?php } ?>
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <?php echo $page_title ?>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li class="active">
+                            <i class="fa fa-paper-plane"></i> <?php echo $nav ?>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
         <?php 
       }?>

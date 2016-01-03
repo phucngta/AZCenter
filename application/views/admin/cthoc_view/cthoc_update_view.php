@@ -14,7 +14,6 @@ foreach($chuongtrinhhoc as $tr)
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-4 col-lg-offset-4">
-      <h1>Sửa Chương Trình Đào Tạo</h1>
       <form method="post" name="suabaihoc">
         <div class="form-group">
             <div class="form-group">

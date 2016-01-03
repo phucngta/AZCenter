@@ -1,10 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
   <div class="row">
-    <div class="col-lg-12">
-      <h1>Danh Sách Học Viên</h1>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-lg-12" style="margin-top: 10px;">
 
       <?php

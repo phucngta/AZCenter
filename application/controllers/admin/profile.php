@@ -36,7 +36,7 @@ class profile extends Admin_Controller
       $this->ion_auth->update($current_user->id, $this->new_data);
 
       $this->session->set_flashdata('message', $this->ion_auth->messages());
-      redirect('admin/profile','refresh');
+      redirect('admin/profile');
     }
   }
 }

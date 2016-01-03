@@ -2,7 +2,6 @@
 <div class="container" style="margin-top: 60px;">
   <div class="row">
     <div class="col-lg-4 col-lg-offset-4">
-      <h2>Sửa Thông Tin Giảng Viên</h2>
       <?php echo form_open_multipart('',array('class'=>'form-horizontal'));?>
 
       <div class="form-group">

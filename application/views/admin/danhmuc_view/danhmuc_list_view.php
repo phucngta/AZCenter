@@ -2,7 +2,6 @@
 <div class="container-fluid" >
   <div class="row">
     <div class="col-lg-12">
-      <h1>Danh Sách Danh Mục </h1>
       <a href="<?php echo base_url('admin/danhmuc/add');?>" class="btn btn-primary">Thêm Danh Mục</a> 
     </div>
   </div>
