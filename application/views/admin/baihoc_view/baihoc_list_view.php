@@ -20,7 +20,7 @@
         <tr><td></td><td>Tên Bài Học</td><td>Chương Trình Đào Tạo</td></tr>
         <?php foreach ($baihoc as $bh) {?>
         <tr>
-          <?php echo '<td><a href="#" onclick="suabaihoc('.$bh->id.')">'?><span class="glyphicon glyphicon-pencil"></span></a>
+          <?php echo '<td><a href="#" onclick="suabh('.$bh->id.')">'?><span class="glyphicon glyphicon-pencil"></span></a>
             <a href="<?php echo base_url('admin/baihoc/delete/'.$bh->id); ?>"><span class="glyphicon glyphicon-remove"></span></a>
           </td>
           <td hidden><?php echo $bh->id ?></td>
