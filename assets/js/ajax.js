@@ -111,6 +111,38 @@ function getLesson(macth)
 	} 
 }
 
+function thembaihoc() 
+{
+	xmlHttp = new createXmlHttp();
+	url = 'baihoc/add';
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
+		{
+			document.getElementById('ajax_display_form').innerHTML = xmlHttp.responseText;
+		}
+	} 
+}
+
+function suabaihoc(id) 
+{
+	xmlHttp = new createXmlHttp();
+	url = 'baihoc/update/'+id;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4 || xmlHttp.readyState =="complete")
+		{
+			document.getElementById('ajax_display_form').innerHTML = xmlHttp.responseText;
+		}
+	} 
+}
+
 function themdm() 
 {
 	xmlHttp = new createXmlHttp();

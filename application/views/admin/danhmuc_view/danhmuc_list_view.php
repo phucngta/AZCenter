@@ -25,9 +25,10 @@
               echo '<td></td>';?>
             <td><?php echo $dmc->madm ?></td>
             <td><?php echo $dmc->tendm ?></td>
-          </tr>
-          <?php } ?>
+        </tr>
+        <?php } ?>
       </table>
     </div>
   </div>
+
 </div>

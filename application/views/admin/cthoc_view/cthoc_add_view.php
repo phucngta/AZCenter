@@ -1,18 +1,28 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-<div class="container-fluid">
+<div class="container" style="margin-top: 30px;">
   <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
-      <form method="post" name="themcthoc">
-        <div class="form-group">
-          <label >Tên Chương Trình Đào Tạo</label>
-          <input type="text" class="form-control" name="tencth" placeholder="" required>
+    <form method="post" name="themcthoc">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label >Tên Chương Trình</label>
+            <input type="text" class="form-control" name="tencth" placeholder="" required>
+          </div>
         </div>
-        <div class="form-group">
-          <label >Mô Tả</label>
-          <textarea name="mota" class="form-control" cols="40" rows="5" required></textarea>
-        </div>   
-        <button type="submit" name="themcthoc" class="btn btn-primary btn-lg btn-block">Thêm chương trình đào tạo</button>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label >Mô Tả</label>
+            <textarea name="mota" class="form-control" rows="10" required></textarea>
+          </div>   
+        </div>
+      </div>
+      <div class="col-lg-2 col-lg-offset-4">
+        <button type="submit" name="themcthoc" class="btn btn-primary btn-lg btn-block">Thêm</button>
+      </div>
     </form>
-    </div>
+
   </div>
-</di
+</div>
