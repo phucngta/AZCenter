@@ -8,9 +8,8 @@
         {?>
 
       <div class="form-group">
-        <label class="control-label col-sm-3">Tên Danh Mục</label>
         <div class="col-sm-6">
-          <input type="text" value="<?php echo $dmc->tendm?>" class="form-control" name="tendm" placeholder="" required>
+          <input type="text" value="<?php echo $dmc->tendm?>" class="form-control" name="tendm" placeholder="Tên Danh Mục" required>
         </div>
         <div class="col-sm-3">
          <button type="submit" name="suadanhmuc" class="btn btn-primary">Cập nhập</button>
