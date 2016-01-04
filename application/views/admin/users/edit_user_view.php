@@ -92,22 +92,28 @@
         <label for="groups[]" class="control-label col-sm-2">Group</label>
         <div class="col-sm-6">
           <?php
-          $option = array();
+          // $option = array();
           if(isset($groups))
           {
 
             foreach($groups as $group)
             {
-              $option[$group->id] = $group->name;
-              if (in_array($group->id, $usergroups)) {
-                $selected_id = $group->id;
-              }
+              // $option[$group->id] = $group->name;
+              // if (in_array($group->id, $usergroups)) {
+              //   $selected_id = $group->id;
+              // }
+              echo '<div class="radio">';
+              echo '<label>';
+              echo form_radio('groups[]', $group->id, set_radio('groups[]', $group->id, in_array($group->id,$usergroups)));
+              echo ' '.$group->name;
+              echo '</label>';
+              echo '</div>';
             }
-            echo form_dropdown('group', $option, $selected_id, 'class="form-control"');
+            // echo form_dropdown('group', $option, $selected_id, 'class="form-control"');
           }
-          echo '</div>';
           ?>
         </div>
+      </div>
 
         <div class="col-sm-3"><?php echo form_hidden('user_id',$user->id);?></div>
         <div class="col-sm-4">

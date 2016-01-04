@@ -4,8 +4,8 @@
     <div class="col-lg-3">
       <label class="col-lg-offset-3">Ảnh đại diện</label>
       <?php 
-        echo '<img alt="Avatar" id="view" class="img-responsive" src="'.base_url('uploads/avatar/no-user-image.gif').'">'; 
-        ?>
+      echo '<img alt="Avatar" id="view" class="img-responsive" src="'.base_url('uploads/avatar/no-user-image.gif').'">'; 
+      ?>
     </div>
 
     <div class="col-lg-8">
@@ -85,21 +85,34 @@
         ?>
       </div>
 
-      <div class="form-group">
-        <label for="groups[]" class="control-label col-sm-2">Group</label>
-          <div class="col-sm-6">
-          <?php
-          if(isset($groups))
+<!--           if(isset($groups))
           {
-            echo '<select name="group" class="form-control">';
+            echo '<select name="group[]" class="form-control">';
             foreach($groups as $group)
             {
               echo '<option value='.$group->id.'>'.$group->name.'</option>';
             }
             echo '</select>';
+          } -->
+      </div> -->
+      <div class="form-group">
+        <label for="groups[]" class="control-label col-sm-2">Group</label>
+        <div class="col-sm-6">
+          <?php
+          if(isset($groups))
+          {
+            foreach($groups as $group)
+            {
+              echo '<div class="radio">';
+              echo '<label>';
+              echo form_radio('groups[]', $group->id, set_radio('groups[]', $group->id));
+              echo ' '.$group->name;
+              echo '</label>';
+              echo '</div>';
+            }
           }
-        echo '</div>';
-        ?>
+          ?>
+        </div>
       </div>
 
       <div class="col-sm-3"></div>
