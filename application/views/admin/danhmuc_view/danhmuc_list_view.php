@@ -5,6 +5,11 @@
       <button onclick="themdm()" class="btn btn-primary">Thêm Danh Mục</button> 
     </div>
   </div>
+
+  <div class="row" >
+    <div class="col-lg-12" style="margin-top: 10px;" id='ajax_display'></div>
+  </div>
+  
   <div class="row">
     <div class="col-lg-12" style="margin-top: 10px;">
       <table class="table table-hover table-bordered table-condensed">
@@ -24,7 +29,5 @@
       </table>
     </div>
   </div>
-  <div class="row" >
-    <div class="col-lg-12" style="margin-top: 10px;" id='ajax_display'></div>
-  </div>
+  
 </div>

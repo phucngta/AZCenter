@@ -11,14 +11,14 @@ class Baihoc extends Admin_Controller
       $this->session->set_flashdata('message','You are not allowed to access this page');
       redirect('admin');
     }
-    $this->load->model('Cthoc_model');
-    $this->load->model('Baihoc_model');
+    $this->load->model('cthoc_model');
+    $this->load->model('baihoc_model');
   }
   public function index($macth = NULL)
   {
     $this->data['page_title']='Quản lý bài học';
     $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/ Quản lý bài học';
-    $this->data['baihoc']= $this->Baihoc_model->show($macth);
+    $this->data['baihoc']= $this->baihoc_model->show($macth);
     if ($macth != NULL) {
       $this->load->view('admin/baihoc_view/baihoc_list_view', $this->data);
     }
@@ -26,40 +26,38 @@ class Baihoc extends Admin_Controller
   }
   public function add()
   {
-    $this->data['page_title']='Thêm Bài Học';
-    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/baihoc").'"> Quản lý bài học</a> / Thêm bài học';
-    $this->render('admin/baihoc_view/baihoc_add_view');
+
     $thembaihoc=$this->input->post('thembaihoc');
     if(isset($thembaihoc))
     {
-      $this->Baihoc_model->add();
+      $this->baihoc_model->add();
       $this->session->set_flashdata('message','Thêm Thành Công');
-      redirect('admin/baihoc/index');
+      redirect('admin/baihoc');
     }
+    else $this->load->view('admin/baihoc_view/baihoc_add_view');
   }
 
-   public function update()
+  public function update($id =NULL)
   {
-    $this->data['page_title']='Sửa Bài Học';
-    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/baihoc").'"> Quản lý bài học</a> / Sửa bài học';
-    $this->data['baihoc']= $this->Baihoc_model->show();
-    $this->render('admin/baihoc_view/baihoc_update_view');
-    $id= $this->uri->segment(4);
     $suabaihoc= $this->input->post('suabaihoc');
     if(isset($suabaihoc))
     {
-      $this->Baihoc_model->update($id);
+      $this->baihoc_model->update();
       $this->session->set_flashdata('message','Sửa Thành công');
       redirect('admin/baihoc');
     }
+    {
+      $this->data['baihoc'] = $this->baihoc_model->show(NULL, $id);
+      $this->load->view('admin/baihoc_view/baihoc_update_view', $this->data);
+    }
 
   }
-    public function delete()
-    {
-      $id=$this->uri->segment(4);
-      $this->Baihoc_model->delete($id);
-      $this->session->set_flashdata('message','Xóa Thành Công');
-      redirect('admin/baihoc/index');
-    }
+  public function delete()
+  {
+    $id=$this->uri->segment(4);
+    $this->baihoc_model->delete($id);
+    $this->session->set_flashdata('message','Xóa Thành Công');
+    redirect('admin/baihoc');
+  }
 }
 ?>

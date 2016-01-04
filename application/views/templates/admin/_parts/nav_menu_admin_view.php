@@ -18,7 +18,7 @@
 	<a href="javascript:;" data-toggle="collapse" data-target="#hocvu"><i class="fa fa-pencil-square-o"></i> Quản lý đào tạo <i class="fa fa-fw fa-caret-down"></i></a>
 	<ul id="hocvu" class="collapse">
 		<li>
-			<a href="<?php echo site_url('admin/cthoc');?>"><i class="fa fa-language"></i> Chương trình đào tạo</a>
+			<a href="<?php echo site_url('admin/cthoc');?>"><i class="fa fa-language"></i> Chương trình học</a>
 		</li>
 		<li>
 			<a href="<?php echo site_url('admin/baihoc');?>"><i class="fa fa-book"></i> Bài học</a>

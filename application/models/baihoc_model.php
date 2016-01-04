@@ -5,10 +5,13 @@ class Baihoc_model extends CI_model
   {
       parent::__contruct();
   }
-  public function show($macth = NULL)
+  public function show($macth = NULL, $id = NULL)
   {
     if ($macth != NULL) {
       $this->db->where("macth", $macth);
+    }
+    if ($id != NULL) {
+      $this->db->where("id", $id);
     }
     $query= $this->db->get('baihoc');
     $query_result= $query->result_object();
@@ -36,9 +39,9 @@ class Baihoc_model extends CI_model
     }
   }
 
-    public function update($id)
+    public function update()
     {
-      $this->id=$id;
+      $this->id=$this->input->post('id');
      $this->macth= $this->input->post('macth');
      $this->tenbh= $this->input->post('tenbh');
       $suabaihoc= $this->input->post('suabaihoc');

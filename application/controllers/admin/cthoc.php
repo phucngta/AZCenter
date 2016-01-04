@@ -15,14 +15,14 @@ class Cthoc extends Admin_Controller
   }
   public function index()
   {
-    $this->data['page_title']='Quản lý chương trình đào tạo';
+    $this->data['page_title']='Quản lý chương trình học';
     $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/ Quản lý chương trình';
     $this->data['chuongtrinhhoc']= $this->Cthoc_model->show();
     $this->render('admin/cthoc_view/cthoc_list_view');
   }
   public function add()
   {
-    $this->data['page_title']='Thêm chương trình đào tạo';
+    $this->data['page_title']='Thêm chương trình';
     $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/cthoc").'"> Quản lý chương trình</a> / Thêm chương trình';
     $this->render('admin/cthoc_view/cthoc_add_view');
     $themcthoc=$this->input->post('themcthoc');
@@ -36,7 +36,7 @@ class Cthoc extends Admin_Controller
 
    public function update()
   {
-    $this->data['page_title']='Sửa chương trình đào tạo';
+    $this->data['page_title']='Sửa chương trình học';
     $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/cthoc").'"> Quản lý chương trình</a> / Sửa chương trình';
     $this->data['chuongtrinhhoc']= $this->Cthoc_model->show();
     $this->render('admin/cthoc_view/cthoc_update_view');
