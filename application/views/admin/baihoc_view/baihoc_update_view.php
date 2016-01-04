@@ -28,7 +28,7 @@
         </div>
 
       </div>
-      <input type="hidden" value="<?php echo "$bh->id"  ?>" class="form-control" name="id" placeholder="" readonly>
+      <input type="hidden" value="<?php echo "$bh->id"  ?>" class="form-control" name="id">
     </form>
     <?php }?>
   </div>

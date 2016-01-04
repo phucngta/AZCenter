@@ -127,7 +127,7 @@ function thembaihoc()
 	} 
 }
 
-function suabaihoc(id) 
+function suabh(id) 
 {
 	xmlHttp = new createXmlHttp();
 	url = 'baihoc/update/'+id;

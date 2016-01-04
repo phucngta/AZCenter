@@ -84,17 +84,7 @@
         echo '</div>';
         ?>
       </div>
-
-<!--           if(isset($groups))
-          {
-            echo '<select name="group[]" class="form-control">';
-            foreach($groups as $group)
-            {
-              echo '<option value='.$group->id.'>'.$group->name.'</option>';
-            }
-            echo '</select>';
-          } -->
-      </div> -->
+      
       <div class="form-group">
         <label for="groups[]" class="control-label col-sm-2">Group</label>
         <div class="col-sm-6">
@@ -110,8 +100,7 @@
               echo '</label>';
               echo '</div>';
             }
-          }
-          ?>
+          } ?>
         </div>
       </div>
 
