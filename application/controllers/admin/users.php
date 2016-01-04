@@ -31,7 +31,7 @@ class users extends Admin_Controller
     $this->load->library('form_validation');
     $this->form_validation->set_rules('name','Name','trim');
     $this->form_validation->set_rules('phone','Phone','trim');
-    $this->form_validation->set_rules('age','Tuổi','greater_than[0]|less_than[50]');
+    $this->form_validation->set_rules('age','Tuổi','greater_than[0]|less_than[65]');
     $this->form_validation->set_rules('username','Username','trim|required|is_unique[users.username]');
     $this->form_validation->set_rules('email','Email','trim|required|valid_email|is_unique[users.email]');
     $this->form_validation->set_rules('password','Password','required');
@@ -76,7 +76,7 @@ class users extends Admin_Controller
 
     $this->form_validation->set_rules('name', 'Name','trim');
     $this->form_validation->set_rules('phone','Phone','trim');
-    $this->form_validation->set_rules('age','Age','greater_than[0]|less_than[50]');
+    $this->form_validation->set_rules('age','Age','greater_than[0]|less_than[65]');
     $this->form_validation->set_rules('username','Username','trim|required');
     $this->form_validation->set_rules('email','Email','trim|required|valid_email');
     $this->form_validation->set_rules('password','Password','min_length[6]');
