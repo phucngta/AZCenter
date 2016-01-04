@@ -21,7 +21,7 @@
       </div>
 
       <div class="form-group">
-        <label id="name" class="control-label col-sm-2">Họ tên</label>
+        <label for="name" class="control-label col-sm-2">Họ tên</label>
         <?php
         echo '<div class="col-sm-6">';
         echo form_input('name',set_value('name',$user->name),'class="form-control"');
@@ -31,7 +31,7 @@
       </div>
 
       <div class="form-group">
-        <label id="phone" class="control-label col-sm-2">Điện thoại</label>
+        <label for="phone" class="control-label col-sm-2">Điện thoại</label>
         <?php
         echo '<div class="col-sm-6">';
         echo form_input('phone',set_value('phone',$user->phone),'class="form-control"');
@@ -41,7 +41,7 @@
       </div>
 
       <div class="form-group">
-        <label id="age" class="control-label col-sm-2">Tuổi</label>
+        <label for="age" class="control-label col-sm-2">Tuổi</label>
         <?php
         echo '<div class="col-sm-6">';
         echo form_input('age',set_value('age',$user->age),'class="form-control"');
@@ -51,7 +51,7 @@
       </div>
 
       <div class="form-group">
-        <label id="age" class="control-label col-sm-2">Email</label>
+        <label for="email" class="control-label col-sm-2">Email</label>
         <?php
         echo '<div class="col-sm-6">';
         echo form_input('email',set_value('email',$user->email),'class="form-control"');
