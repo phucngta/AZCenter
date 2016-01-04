@@ -15,8 +15,8 @@ class users extends Admin_Controller
 
   public function index($group_id = NULL)
   {
-    $this->data['page_title'] = 'Quản lý người dùng';
-    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/ Quản lý người dùng';
+    $this->data['page_title'] = 'User Manager';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/ User Manager';
     $this->data['users'] = $this->ion_auth->users($group_id)->result();
     if ($group_id != NULL) {
       $this->load->view('admin/users/list_users_view', $this->data);
@@ -27,7 +27,7 @@ class users extends Admin_Controller
   public function create()
   {
     $this->data['page_title'] = 'Create user';
-    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/users").'"> Quản lý người dùng</a> / Thêm người dùng';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/users").'"> User Manager</a> / Create User';
     $this->load->library('form_validation');
     $this->form_validation->set_rules('name','Name','trim');
     $this->form_validation->set_rules('phone','Phone','trim');
@@ -71,7 +71,7 @@ class users extends Admin_Controller
   {
     $user_id = $this->input->post('user_id') ? $this->input->post('user_id') : $user_id;
     $this->data['page_title'] = 'Edit user';
-    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/users").'"> Quản lý người dùng</a> / Sửa người dùng';
+    $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/users").'"> User Manager</a> / Edit User';
     $this->load->library('form_validation');
 
     $this->form_validation->set_rules('name', 'Name','trim');
@@ -91,7 +91,7 @@ class users extends Admin_Controller
         $this->data['user'] = $user;
       }
       else
-      {
+      { 
         $this->session->set_flashdata('message', 'The user doesn\'t exist.');
         redirect('admin/users', 'refresh');
       }
