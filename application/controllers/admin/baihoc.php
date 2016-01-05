@@ -56,7 +56,7 @@ class Baihoc extends Admin_Controller
   {
     $id=$this->uri->segment(4);
     $this->baihoc_model->delete($id);
-    $this->session->set_flashdata('message','Xóa Thành Công');
+    // $this->session->set_flashdata('message','Xóa Thành Công');
     redirect('admin/baihoc');
   }
 }

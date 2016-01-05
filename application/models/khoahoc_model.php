@@ -98,7 +98,12 @@ class Khoahoc_model extends CI_model
   public function delete($id)
   {
     $this->db->where('makh',$id);
-    $this->db->delete('khoahoc');
+    if($this->db->delete('khoahoc'))
+    {
+      $msg = $this->db->_error_message();
+      $num = $this->db->_error_number();
+      return "Error(".$num.") ".$msg;
+    }
   }
 
   public function _filter_data($table, $data)
@@ -117,6 +122,15 @@ class Khoahoc_model extends CI_model
     return $filtered_data;
   }
 
+  public function dangkykhoahoc($student_id, $makh)
+  {
+    $data=array(
+      'student_id'=> $student_id,
+      'makh'=> $makh,
+        );
+
+    $this->db->update('ctkhoahoc', $data);
+  }
 }
 ?>
 
