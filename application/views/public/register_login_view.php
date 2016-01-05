@@ -4,7 +4,11 @@
 
 
      <form  enctype="multipart/form-data" action="" method="post" role="form" class="form-horizontal">
-          <h4>Đăng Ký Thông Tin Học Viên</h4>
+          <!-- <div class='row'>
+               <div class = 'col-lg-offset-2'>
+                    <h3>ĐĂNG KÝ TÀI KHOẢN</h3><br>
+               </div>
+          </div> -->
           <div class="form-group">
                <label class="control-label col-sm-3"></label>
                <div class="col-sm-5">

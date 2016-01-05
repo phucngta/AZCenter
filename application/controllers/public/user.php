@@ -18,10 +18,9 @@ class user extends Public_Controller
 				'student_id' =>$idhv,
 				);
 			$this->db->insert('ctkhoahoc',$data);
-			return true;
-			
+			$this->session->set_flashdata('message','Đăng ký khóa học thành công');
 		}
-		else return false;
+		redirect('home');
 	}
 	public function login()
 	{
