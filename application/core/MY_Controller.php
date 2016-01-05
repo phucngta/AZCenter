@@ -94,11 +94,12 @@ class Admin_Controller extends MY_Controller
     $this->data['page_title'] = 'Dashboard';
     $this->data['nav'] = 'Dashboard';
     
-    if (!$this->ion_auth->logged_in())
+    if (!$this->ion_auth->logged_in() )
     {
       //redirect them to the login page
       redirect('admin/user/login', 'refresh');
     }
+
 
     $this->data['current_user_drop_menu'] = '';
     $this->data['current_user_nav_menu'] = '';
@@ -113,6 +114,7 @@ class Admin_Controller extends MY_Controller
         $this->ion_auth->logout();
         redirect('admin/user/login', 'refresh');
     }
+
     // if($this->ion_auth->in_group('teacher'))
     // {
     //   $this->data['current_user_nav_menu'] = $this->load->view('templates/admin/_parts/nav_menu_teacher_view.php', NULL, TRUE);

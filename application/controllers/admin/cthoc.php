@@ -11,13 +11,13 @@ class Cthoc extends Admin_Controller
       $this->session->set_flashdata('message','You are not allowed to access this page');
       redirect('admin');
     }
-    $this->load->model('Cthoc_model');
+    $this->load->model('cthoc_model');
   }
   public function index()
   {
     $this->data['page_title']='Quản lý chương trình học';
     $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/ Quản lý chương trình';
-    $this->data['chuongtrinhhoc']= $this->Cthoc_model->show();
+    $this->data['chuongtrinhhoc']= $this->cthoc_model->show();
     $this->render('admin/cthoc_view/cthoc_list_view');
   }
   public function add()
@@ -28,7 +28,7 @@ class Cthoc extends Admin_Controller
     $themcthoc=$this->input->post('themcthoc');
     if(isset($themcthoc))
     {
-      $this->Cthoc_model->add();
+      $this->cthoc_model->add();
       $this->session->set_flashdata('message','Thêm Thành Công');
       redirect('admin/cthoc/index');
     }
@@ -38,13 +38,13 @@ class Cthoc extends Admin_Controller
   {
     $this->data['page_title']='Sửa chương trình học';
     $this->data['nav'] = '<a href ="'.site_url("admin").'">Dashboard </a>/<a href ="'.base_url("admin/cthoc").'"> Quản lý chương trình</a> / Sửa chương trình';
-    $this->data['chuongtrinhhoc']= $this->Cthoc_model->show();
+    $this->data['chuongtrinhhoc']= $this->cthoc_model->show();
     $this->render('admin/cthoc_view/cthoc_update_view');
     $id= $this->uri->segment(4);
     $suacthoc= $this->input->post('suacthoc');
     if(isset($suacthoc))
     {
-      $this->Cthoc_model->update($id);
+      $this->cthoc_model->update($id);
       $this->session->set_flashdata('message',' Sửa Thành Công');
       redirect('admin/cthoc/index');
     }
@@ -53,7 +53,7 @@ class Cthoc extends Admin_Controller
     public function delete()
     {
       $id=$this->uri->segment(4);
-      $this->Cthoc_model->delete($id);
+      $this->cthoc_model->delete($id);
       // $this->session->set_flashdata('message','Xóa Thành Công');
       redirect('admin/cthoc/index');
     }

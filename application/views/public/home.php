@@ -9,33 +9,33 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="item">
-						<img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojN2E3YTdhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+">
+						<img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="<?php echo base_url('assets/img/HPNY.jpg')?>">
 						<div class="container">
-							<div class="carousel-caption">
+							<!-- <div class="carousel-caption">
 								<h1 align="left">Trung Tâm Anh Ngữ AZCenter</h1>
 								<p align="left">Trung tâm anh ngữ hàng đầu-Nơi chắp cánh cho ước mơ của bạn</p>
 								<p><a class="btn btn-lg btn-primary" href="<?php echo base_url('public/user/register');?>" role="button">Đăng Ký Ngay Hôm Nay</a></p>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<div class="item">
-						<img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNmE2YTZhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==">
+						<img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide" src="<?php echo base_url('assets/img/banner-giao-tiep.jpg')?>">
 						<div class="container">
-							<div class="carousel-caption">
+							<!-- <div class="carousel-caption">
 								<h2 align="left">Danh Ngôn hay</h2>
 								<p align="left">Success is the ability to go from one failure to another with no loss of enthusiasm.</p>
 								<p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<div class="item active">
-						<img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNWE1YTVhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+">
+						<img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide" src="<?php echo base_url('assets/img/head-banner.jpg')?>">
 						<div class="container">
-							<div class="carousel-caption">
+							<!-- <div class="carousel-caption">
 								<h1 align="left">Học Tiếng Anh Miễn Phí</h1>
 								<p align="left">Cùng nhau học tiếng anh miễn phí với Trung tâm AZCenter và hàng ngàn khóa học đang chờ đợi bạn</p>
 								<p><a class="btn btn-lg btn-primary" href="#" role="button">Tìm Hiểu Thêm</a></p>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
