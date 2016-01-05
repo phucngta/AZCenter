@@ -72,6 +72,6 @@ class teachers extends Admin_Controller
 
 	public function delete($user_id = NULL, $controller = 'teachers')
 	{
-		parent::delete($user_id, $controller);
+		parent::deleteUser($user_id, $controller);
 	}
 }

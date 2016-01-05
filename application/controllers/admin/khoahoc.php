@@ -83,8 +83,8 @@ class Khoahoc extends Admin_Controller
     public function delete()
     {
       $id=$this->uri->segment(4);
-      $this->Khoahoc_model->delete($id);
-      $this->session->set_flashdata('message','Xóa Thành Công');
+      
+      // $this->session->set_flashdata('message',$this->Khoahoc_model->delete($id));
       redirect('admin/khoahoc/index');
     }
 }
