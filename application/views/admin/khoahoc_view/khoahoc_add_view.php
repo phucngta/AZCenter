@@ -26,7 +26,7 @@
         <div class="form-group">
           <label class="control-label col-sm-2">Học Phí</label>
           <div class="col-sm-6">
-            <input type="number" class="form-control" name="hocphi" placeholder="" min="10000" max="10000000" step="100000" value="10000" required>
+            <input type="number" class="form-control" name="hocphi" placeholder="" min="10000" max="10000000" value="10000" required>
           </div>
         </div> 
 
