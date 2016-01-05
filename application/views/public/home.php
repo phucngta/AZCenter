@@ -1,6 +1,6 @@
 <div class="container">
 	<!--<div class="col-sm-12 col-md-12 col-lg-12">-->
-		<div class="col-sm-8 col-md-8 col-lg-8">
+		<div class="col-xs-8 col-sm-8">
 			<div id="carousel-id" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li data-target="#carousel-id" data-slide-to="0" class=""></li>
@@ -46,26 +46,25 @@
 		<div class=" col-sm-4 col-md-4">
 		<h5 align="center">KHÓA HỌC NỔI BẬT</h5>
 		<hr></hr>
-								<div class="panel price panel-green">
+				<div class="panel price panel-green">
 								<div class="panel-heading text-center">
 								</div>
 								<div class="panel-body text-center">
-									<img src="<?php echo base_url('assets/img/pencil_icon.png')?>" class="img-responsive" alt="Image">
+									<img src="<?php echo base_url('assets/img/it_logo.jpg')?>" class="img-responsive" alt="Image">
 								</div>
 								<ul class="list-group list-group-flush text-center">
 									<li class="list-group-item"><i class="icon-ok text-danger"></i><strong>Tiếng Anh Chuyên Ngành CNTT</strong></li>
-									<li class="list-group-item"><i class="icon-ok text-danger"></i>0 VND</li>
-									<li class="list-group-item"><i class="icon-ok text-danger"></i> 24/7 support</li>
+									<li class="list-group-item"><i class="fa fa-money"></i>&nbsp;Miễn Phí</li>
+			
 								</ul>
 								<div class="panel-footer">
-									<a class="btn btn-lg btn-block btn-success" href="#">Đăng Ký Ngay</a>
+									<a class="btn btn-lg btn-block btn-success" href="<?php echo base_url('public/user/register');?>">Đăng Ký Ngay</a>
 								</div>
-								</div>
+								</div>				
 
 		</div>
-		<div id="line"></div>
-		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="col-xs-8">
+			<div class="col-xs-12 col-sm-12">
 			<div id="khoa_hoc">
 			<span><h3 align="center">THÔNG TIN CÁC KHÓA HỌC</h3></span>
 			<hr></hr>
@@ -82,12 +81,18 @@
 									<img src="<?php echo base_url().$value->picture?>" class="img-responsive" alt="Image">
 								</div>
 								<ul class="list-group list-group-flush text-center">
-									<li class="list-group-item"><i class="icon-ok text-danger"></i><strong><?php echo $value->tenkh;?></strong></li>
+									<li class="list-group-item"><i class="icon-ok text-danger"></i><a href="<?php echo base_url('course/course').'/'.$value->makh;?>"><strong><?php echo $value->tenkh;?></strong></li>
 									<li class="list-group-item"><i class="icon-ok text-danger"></i><?php echo number_format($value->hocphi);?>VND</li>
 									<li class="list-group-item"><i class="icon-ok text-danger"></i> 24/7 support</li>
 								</ul>
 								<div class="panel-footer">
-									<a class="btn btn-lg btn-block btn-danger" href="#">Đăng Ký Ngay</a>
+								<?php
+								if($this->ion_auth->logged_in()){?>
+									<a class="btn btn-lg btn-block btn-primary" href="<?php echo base_url('public/user/dkkh').'/'.$current_user->id.'/'.$value->makh;?>">Tham gia</a>
+								<?php }else{?>
+									<a class="btn btn-lg btn-block btn-danger" href="<?php echo base_url('public/user/register');?>">Đăng ký ngay</a>
+								<?php }?>
+
 								</div>
 								</div>
 							<!-- <div class="panel panel-info cell">

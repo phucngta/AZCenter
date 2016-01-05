@@ -10,7 +10,19 @@ class user extends Public_Controller
 	public function index()
 	{
 	}
-
+	public function dkkh($idhv,$idkh)
+	{
+		if(isset($idhv) || isset($idkh)){
+			$data = array(
+				'makh'=>$idkh,
+				'student_id' =>$idhv,
+				);
+			$this->db->insert('ctkhoahoc',$data);
+			return true;
+			
+		}
+		else return false;
+	}
 	public function login()
 	{
 		if($this->input->post('login'))

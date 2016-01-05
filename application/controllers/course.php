@@ -9,12 +9,10 @@ class Course extends Public_Controller
 	{
 		parent::__construct();
 	}
-	public function list_course($madm)
+	public function course($makh)
 	{
 		$this->load->model('khoahoc_model');
-		$data['khoa_hoc'] =$this->khoahoc_model->show_theo_danh_muc($madm);
-		$this->data['khoa_hoc'] = $this->load->view('public/course');
-		$this->render('public/home');
-
+		$this->data['khoa_hoc'] =$this->khoahoc_model->showid($makh);
+		$this->render('public/course');
 	}
 }

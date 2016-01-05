@@ -42,15 +42,7 @@
 					</ul>
 				</li>
 				
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> &nbsp; Liên Hệ <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li><a href="#">Separated link</a></li>
-					</ul>
-				</li>
+				
 			</ul>
 			
 			

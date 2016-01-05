@@ -6,13 +6,32 @@ class Khoahoc_model extends CI_model
     parent::__contruct();
   }
 
-  public function show_theo_danh_muc($madm)
+  public function showid($makh)
   {
-    $madm = $this->db->escape($madm);
-    $str = 'select * from khoahoc where madm ='.$madm;
+    if($makh){
+    $makh = $this->db->escape($makh);
+    $str = 'SELECT
+              khoahoc.makh,
+              users.name as teacher,
+              khoahoc.tgbd,
+              khoahoc.tgkt,
+              khoahoc.hocphi,
+              khoahoc.tenkh,
+              khoahoc.picture,
+              chuongtrinhhoc.tencth,
+              chuongtrinhhoc.mota,
+              Count(ctkhoahoc.student_id) as siso
+              FROM
+              users
+              INNER JOIN khoahoc ON khoahoc.teacher_id = users.id
+              INNER JOIN ctkhoahoc ON ctkhoahoc.makh = khoahoc.makh
+              INNER JOIN chuongtrinhhoc ON khoahoc.macth = chuongtrinhhoc.macth
+              WHERE khoahoc.makh ='.$makh;
     $query = $this->db->query($str);
     $query_result = $query->result();
     return $query_result;
+    }
+  return false;
   }
 
   public function show($teacher_id = NULL)
