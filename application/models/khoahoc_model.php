@@ -117,7 +117,7 @@ class Khoahoc_model extends CI_model
   public function delete($id)
   {
     $this->db->where('makh',$id);
-    $this->db->delete('khoahoc')
+    $this->db->delete('khoahoc');
     // if(!)
     // {
     //   $msg = $this->db->_error_message();

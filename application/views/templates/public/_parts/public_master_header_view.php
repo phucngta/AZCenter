@@ -36,7 +36,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> &nbsp; Danh Mục Khóa Học<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-					<?php foreach ($danhmuc as $key => $value) { $url ="course/$value->madm";?>
+					<?php foreach ($danhmuc as $key => $value) { $url ="#";?>
 					<?php echo '<li><a href="'.$url.'">'.$value->tendm.'</a></li>'?>
 					<?php }?>
 					</ul>
