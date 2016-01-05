@@ -11,7 +11,7 @@
 </div>
 			<div class="col-md-3"><h3><i class="fa fa-calendar"></i></h3>&nbsp;<?php echo $value->tgkt;?></div>
 			<div class="col-md-3"><h3><i class="fa fa-money"></i></h3>&nbsp; <?php echo number_format($value->hocphi);?>&nbsp;VND</div>
-			<div class="col-md-3"><h3><i class="fa fa-teacher"></i></h3><?php echo $value->teacher;?></div>
+			<div class="col-md-3"><h3><i class="fa fa-user"></i></h3><?php echo $value->teacher;?></div>
 		</div>
 		<div class="col-md-9"><p><?php echo $value->mota?></p></div>
 		
