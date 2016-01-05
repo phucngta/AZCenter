@@ -6,13 +6,7 @@
                 <p class="grey-text text-lighten-4">Đây là dự án nằm trong đồ án học kỳ. Hi vọng sẽ được áp dụng thực tế</p>
               </div>
               <div class="col-lg-4">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
+                <h5 class="white-text">Liên kết</h5>
               </div>
             </div>
           </div>
