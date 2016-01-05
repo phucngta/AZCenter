@@ -82,12 +82,18 @@
 									<img src="<?php echo base_url().$value->picture?>" class="img-responsive" alt="Image">
 								</div>
 								<ul class="list-group list-group-flush text-center">
-									<li class="list-group-item"><i class="icon-ok text-danger"></i><strong><?php echo $value->tenkh;?></strong></li>
+									<li class="list-group-item"><i class="icon-ok text-danger"></i><a href="<?php echo base_url('course/course').'/'.$value->makh;?>"><strong><?php echo $value->tenkh;?></strong></li>
 									<li class="list-group-item"><i class="icon-ok text-danger"></i><?php echo number_format($value->hocphi);?>VND</li>
 									<li class="list-group-item"><i class="icon-ok text-danger"></i> 24/7 support</li>
 								</ul>
 								<div class="panel-footer">
-									<a class="btn btn-lg btn-block btn-danger" href="#">Đăng Ký Ngay</a>
+								<?php
+								if($this->ion_auth->logged_in()){?>
+									<a class="btn btn-lg btn-block btn-primary" href="<?php echo base_url('public/user/dkkh').'/'.$current_user->id.'/'.$value->makh;?>">Tham gia</a>
+								<?php }else{?>
+									<a class="btn btn-lg btn-block btn-danger" href="<?php echo base_url('public/user/register');?>">Đăng ký ngay</a>
+								<?php }?>
+
 								</div>
 								</div>
 							<!-- <div class="panel panel-info cell">
