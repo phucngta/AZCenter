@@ -117,12 +117,13 @@ class Khoahoc_model extends CI_model
   public function delete($id)
   {
     $this->db->where('makh',$id);
-    if($this->db->delete('khoahoc'))
-    {
-      $msg = $this->db->_error_message();
-      $num = $this->db->_error_number();
-      return "Error(".$num.") ".$msg;
-    }
+    $this->db->delete('khoahoc');
+    // if(!)
+    // {
+    //   $msg = $this->db->_error_message();
+    //   $num = $this->db->_error_number();
+    //   return "Error(".$num.") ".$msg;
+    // }
   }
 
   public function _filter_data($table, $data)

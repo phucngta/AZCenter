@@ -36,7 +36,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> &nbsp; Danh Mục Khóa Học<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-					<?php foreach ($danhmuc as $key => $value) { $url ="course/$value->madm";?>
+					<?php foreach ($danhmuc as $key => $value) { $url ="#";?>
 					<?php echo '<li><a href="'.$url.'">'.$value->tendm.'</a></li>'?>
 					<?php }?>
 					</ul>
@@ -102,7 +102,7 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $current_user->name;?> <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="<?php echo site_url('public/profile');?>">Hồ sơ</a></li>
+                  <!-- <li><a href="<?php echo site_url('public/profile');?>">Hồ sơ</a></li> -->
                   <!-- <?php echo $current_user_drop_menu?> -->
                   <!-- <li class="divider"></li> -->
                   <li><a href="<?php echo site_url('public/user/logout');?>">Thoát</a></li>
