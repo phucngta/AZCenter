@@ -99,19 +99,24 @@ class Admin_Controller extends MY_Controller
       //redirect them to the login page
       redirect('admin/user/login', 'refresh');
     }
-    
+
     $this->data['current_user_drop_menu'] = '';
     $this->data['current_user_nav_menu'] = '';
 
-    if($this->ion_auth->in_group('admin'))
+    if($this->ion_auth->in_group('admin') || $this->ion_auth->in_group('teacher'))
     {
       $this->data['current_user_drop_menu'] = $this->load->view('templates/admin/_parts/drop_menu_admin_view.php', NULL, TRUE);
       $this->data['current_user_nav_menu'] = $this->load->view('templates/admin/_parts/nav_menu_admin_view.php', NULL, TRUE);
     }
-    if($this->ion_auth->in_group('teacher'))
+    else
     {
-      $this->data['current_user_nav_menu'] = $this->load->view('templates/admin/_parts/nav_menu_teacher_view.php', NULL, TRUE);
+        $this->ion_auth->logout();
+        redirect('admin/user/login', 'refresh');
     }
+    // if($this->ion_auth->in_group('teacher'))
+    // {
+    //   $this->data['current_user_nav_menu'] = $this->load->view('templates/admin/_parts/nav_menu_teacher_view.php', NULL, TRUE);
+    // }
   }
 
   protected function render($the_view = NULL, $template = 'admin/admin_master')
