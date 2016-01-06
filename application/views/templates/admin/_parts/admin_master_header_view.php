@@ -32,6 +32,7 @@
 <body>
   <?php
   if($this->ion_auth->logged_in()) {
+    $this->ion_auth->logout();
     ?>
     <div id="wrapper">  
       <!-- Navigation -->
@@ -56,7 +57,7 @@
                 <li><a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a> </li>
                 <li><a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a></li>
                 
-                <?php echo $current_user_drop_menu?>
+                <?php if(isset($current_user_drop_menu)) echo $current_user_drop_menu?>
                 <li class="divider"></li>
                 <li><a href="<?php echo site_url('admin/user/logout');?>"><i class="fa fa-fw fa-power-off"></i>Logout</a></li>
               </ul>
@@ -66,7 +67,7 @@
         <!-- Side Bar -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-              <?php echo $current_user_nav_menu?>
+              <?php if(isset($current_user_nav_menu)) echo $current_user_nav_menu?>
           </ul>
         </div>
         <!-- End Side Bar -->
@@ -98,7 +99,7 @@
                     </h1>
                     <ol class="breadcrumb">
                         <li class="active">
-                            <i class="fa fa-paper-plane"></i> <?php echo $nav ?>
+                            <i class="fa fa-paper-plane"></i> <?php if(isset($nav)) echo $nav ?>
                         </li>
                     </ol>
                 </div>
