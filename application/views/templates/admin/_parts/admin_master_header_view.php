@@ -32,7 +32,7 @@
 <body>
   <?php
   if($this->ion_auth->logged_in()) {
-    $this->ion_auth->logout();
+    // $this->ion_auth->logout();
     ?>
     <div id="wrapper">  
       <!-- Navigation -->
