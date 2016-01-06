@@ -81,7 +81,7 @@ class user extends Public_Controller
 			$this->upload($this->upload_folder,$username);
 
 			$this->ion_auth->register($username, $password, $email, $this->additional_data, $group_id);
-			$this->session->set_flashdata('message',$this->upload_error.'<br>'.$this->ion_auth->messages());
+			$this->session->set_flashdata('message',$this->upload_error.$this->ion_auth->messages());
 			redirect('home','refresh'); 
 		}
 		else

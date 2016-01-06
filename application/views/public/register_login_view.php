@@ -55,7 +55,7 @@
           <div class="form-group">
                <label for="param_name" class="control-label col-sm-3">Họ và tên:</label>
                <div  class="col-sm-5">
-                    <input type="text" class="form-control" id="name" onblur="kiem_tra_ten(this.value)"name="name" value="<?php echo set_value('name')?>">
+                    <input type="text" class="form-control" id="name" name="name" value="<?php echo set_value('name')?>">
                     <span class="label label-danger" id="ten"></span>
                </div>
 
